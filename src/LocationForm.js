@@ -12,7 +12,6 @@ export default function LocationForm({changeLocationName}) {
     function handleSubmit(event) {
         event.preventDefault();
         changeLocationName(formValue);
-        //event.target.value ? setFormValue(event.target.value) : setFormValue('');
     };
 
     return (
@@ -22,7 +21,6 @@ export default function LocationForm({changeLocationName}) {
             <input type="text" value={formValue} onChange={handleChange}/>
             </label>
             <input type="submit" value="Submit" />
-          
         </form>
         );
     };

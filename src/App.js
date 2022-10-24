@@ -31,7 +31,6 @@ function App() {
       {`Current weather: `}
     <form>
       <button>test</button>
-      {locationName}
     </form>
    
     </div>
