@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-export default function LocationForm({changeLocationName}) {
+export default function LocationForm({setLocationName}) {
     const [formValue, setFormValue] = useState('Perth');
 
 
@@ -10,7 +10,7 @@ export default function LocationForm({changeLocationName}) {
     
     function handleSubmit(event) {
         event.preventDefault();
-        changeLocationName(formValue);
+        setLocationName(formValue);
     };
 
     return (

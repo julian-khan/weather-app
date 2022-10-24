@@ -32,7 +32,7 @@ function App() {
   return (
     <div>
       
-       <LocationForm changeLocationName={changeLocationName}/>
+       <LocationForm setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
 
        {console.log('in app.js', longitude, latitude)}
