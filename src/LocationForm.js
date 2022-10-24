@@ -4,10 +4,7 @@ export default function LocationForm({setLocationName}) {
     const [formValue, setFormValue] = useState('Perth');
 
 
-    function handleChange(event) {
-        setFormValue(event.target.value);
-    };
-    
+
     function handleSubmit(event) {
         event.preventDefault();
         setLocationName(formValue);
@@ -17,7 +14,7 @@ export default function LocationForm({setLocationName}) {
         <form onSubmit={handleSubmit}>
             <label>
             Location:
-            <input type="text" value={formValue} onChange={handleChange}/>
+            <input type="text" value={formValue} onChange={() => {}}/>
             </label>
             <input type="submit" value="Submit" />
         </form>
