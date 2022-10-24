@@ -13,16 +13,13 @@ function App() {
 
   const [longitude, setLongitude] = useState(115.857048);
   const [latitude, setLatitude] = useState(-31.953512);
-  
-
-
-
-  
+    
   return (
     <div>
       
        <LocationForm setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
+       <GetWeatherData longitude={longitude} latitude={latitude} />
 
        {console.log('in app.js', longitude, latitude)}
   
