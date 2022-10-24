@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 
+import LocationForm from './LocationForm';
+
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -13,15 +15,17 @@ function App() {
     .then(data => setWeatherData(data))
   },[]);
 
+  
 
   return (
     <div>
-      {`Current weather: ${weatherData.main.temp}`}
+      {`Current weather: `}
     <form>
       <button>test</button>
     </form>
+    <LocationForm />
     </div>
   );
-}
+};
 
 export default App;
