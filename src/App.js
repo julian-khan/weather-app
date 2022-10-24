@@ -16,14 +16,15 @@ function App() {
   },[]);
 
   
-
   return (
     <div>
+      
+       <LocationForm />
       {`Current weather: `}
     <form>
       <button>test</button>
     </form>
-    <LocationForm />
+   
     </div>
   );
 };
