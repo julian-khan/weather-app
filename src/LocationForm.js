@@ -6,7 +6,6 @@ export default function LocationForm({changeLocationName}) {
 
     function handleChange(event) {
         setFormValue(event.target.value);
-        console.log(formValue);
     };
     
     function handleSubmit(event) {

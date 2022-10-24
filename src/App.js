@@ -8,13 +8,17 @@ import GetLongAndLat from './GetLongAndLat';
 
 function App() {
 
-  const [locationName, setLocationName] = useState('Perth!2!');
+  const [locationName, setLocationName] = useState('Perth');
 
   const changeLocationName = (location) => {
     setLocationName(location);
   };
 
+  const [longitude, setLongitude] = useState(115.857048);
+  const [latitude, setLatitude] = useState(-31.953512);
 
+
+  /*
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {  //fix this so that it responds to result of getlongandlat.js
@@ -23,14 +27,15 @@ function App() {
     .then(response => response.json())
     .then(data => setWeatherData(data))
   },[]);
-
+*/
   
   return (
     <div>
       
        <LocationForm changeLocationName={changeLocationName}/>
-       <GetLongAndLat locationName={locationName} />
-      {`Current weather: `}
+       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
+
+       {console.log('in app.js', longitude, latitude)}
   
     </div>
   );
