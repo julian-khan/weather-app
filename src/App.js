@@ -3,18 +3,19 @@ import './App.css';
 import {useState, useEffect} from 'react';
 
 import LocationForm from './LocationForm';
+import GetLongAndLat from './GetLongAndLat';
 
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
 
   const [locationName, setLocationName] = useState('Perth!2!');
 
-  //delete below func?
   const changeLocationName = (location) => {
     setLocationName(location);
   };
 
+
+  const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=' + 
@@ -28,11 +29,9 @@ function App() {
     <div>
       
        <LocationForm changeLocationName={changeLocationName}/>
+       <GetLongAndLat locationName={locationName} />
       {`Current weather: `}
-    <form>
-      <button>test</button>
-    </form>
-   
+  
     </div>
   );
 };
