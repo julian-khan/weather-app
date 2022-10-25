@@ -22,7 +22,7 @@ function App() {
        <GetWeatherData longitude={longitude} latitude={latitude} />
 
        {console.log('in app.js', longitude, latitude)}
-  
+       
     </div>
   );
 };
