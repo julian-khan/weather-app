@@ -1,8 +1,6 @@
 import {useState, useEffect} from 'react';
 
 export default function GetLongAndLat(props) {
-    const [longitude, setLongitude] = useState(115.857048);
-    const [latitude, setLatitude] = useState(-31.953512);
 
     useEffect(() => {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=` + props.locationName + `&limit=1&appid=` + 

@@ -16,13 +16,10 @@ function App() {
     
   return (
     <div>
-      
        <LocationForm setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
-       <GetWeatherData longitude={longitude} latitude={latitude} />
-
        {console.log('in app.js', longitude, latitude)}
-       
+       <GetWeatherData longitude={longitude} latitude={latitude} />
     </div>
   );
 };
