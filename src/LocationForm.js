@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
-export default function LocationForm({setLocationName}) {
+export default function LocationForm({locationName, setLocationName}) {
     const [formValue, setFormValue] = useState('Perth');
 
 
