@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react';
 import LocationForm from './LocationForm';
 import GetLongAndLat from './GetLongAndLat';
 import GetCurrentWeatherData from './GetCurrentWeatherData';
+import Get3H5DForecast from './Get3H5DForecast';
 
 
 function App() {
