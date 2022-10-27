@@ -19,10 +19,11 @@ function App() {
 
   const retrieved3H5DWeatherData = use3H5DForecast(longitude, latitude);
 
-
+  console.log('retrieved from custom hook', retrieved3H5DWeatherData)
     
 
   return (
+
     <div>
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
