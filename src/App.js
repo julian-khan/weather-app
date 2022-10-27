@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 
 import LocationForm from './LocationForm';
 import GetLongAndLat from './GetLongAndLat';
-import GetWeatherData from './GetWeatherData';
+import GetCurrentWeatherData from './GetCurrentWeatherData';
 
 
 function App() {
@@ -14,15 +14,15 @@ function App() {
   const [longitude, setLongitude] = useState(115.857048);
   const [latitude, setLatitude] = useState(-31.953512);
 
-  const [weatherData, setWeatherData] = useState(null);
+  const [currentWeatherData, setCurrentWeatherData] = useState(null);
     
 
   return (
     <div>
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
-       <GetWeatherData longitude={longitude} latitude={latitude} setWeather = {setWeatherData} />
-       {console.log('test in app.js', weatherData)}
+       <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
+{console.log('final in app.js', currentWeatherData)}
     </div>
   );
 };
