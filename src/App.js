@@ -9,6 +9,7 @@ import use3H5DForecast from './use3H5DForecast';
 
 
 function App() {
+  const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
 
   const [locationName, setLocationName] = useState('Perth');
 
@@ -17,7 +18,8 @@ function App() {
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
 
-  const retrieved3H5DWeatherData = use3H5DForecast(longitude, latitude, 'metric');
+  const retrieved3H5DWeatherData = use3H5DForecast(longitude, latitude, units);
+  console.log('current weather', currentWeatherData);
   console.log('retrieved from custom hook', retrieved3H5DWeatherData)
     
 
