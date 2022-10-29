@@ -1478,22 +1478,27 @@ const test3H5DForecast = {
   }
 
 
-function getMostCommonWeatherDescription(data) {
+
+
+
+function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
 
     for (i = 0; i <= data.list.length - 1; i++) {
         let threeHourWeatherDesc = data.list[i].weather[0].main;
+
         if (threeHourWeatherDesc in weatherDescCount) {
             weatherDescCount[threeHourWeatherDesc]++;
             console.log(weatherDescCount[threeHourWeatherDesc]);
-
         } else {
             weatherDescCount[threeHourWeatherDesc] = 1;
         }
-
     }
+    return weatherDescCount;
+}
 
-    return Object.keys(weatherDescCount).reduce((a, b) => weatherDescCount[a] > weatherDescCount[b] ? a : b);
+function getMostCommonWeatherDescription(Obj) {
+    return Object.keys(Obj).reduce((a, b) => Obj[a] > Obj[b] ? a : b);
 }
 
 function getDailyTempArray(data) {
@@ -1507,7 +1512,7 @@ function getDailyTempArray(data) {
     return dailyTemperatures;
 }
 
-function getDailyMinAndMaxTemp(Arr) {
+function getMinAndMaxTemp(Arr) {
     return [Math.min(...Arr), Math.max(...Arr)];
 }
 
