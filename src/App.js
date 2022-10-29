@@ -19,9 +19,10 @@ function App() {
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
 
   const retrieved3H5DWeatherData = use3H5DForecast(longitude, latitude, units);
-  console.log('current weather', currentWeatherData);
+
   console.log('retrieved from custom hook', retrieved3H5DWeatherData)
     
+
 
   return (
 
