@@ -1,4 +1,4 @@
-//A normal function
+//Normal functions
 
 
 const test3H5DForecast = {
@@ -1504,52 +1504,10 @@ function getDailyTempArray(data) {
         dailyTemperatures.push(data.list[i].main.temp);
         }
     
-        return dailyTemperatures;
+    return dailyTemperatures;
 }
 
-function getDailyMaxAndMinTemp(Arr) {
+function getDailyMinAndMaxTemp(Arr) {
     return [Math.min(...Arr), Math.max(...Arr)];
 }
 
-getDailyTempArray(test3H5DForecast)
-
-/*
-function getDailyMinAndMaxTemp(data) { //need to finish this
-    var minTemp = 0;
-    var maxTemp = 0;
-    
-    for (i = 0; i <= data.list.length - 1; i++) {
-        indexedmintemp > maxTemp ? maxTemp = indexedmintemp; //log issue -> may not get correct min and max temp due to initial val set to 0 for both
-
-
-   
-
-
-       
-
-
-    }
-    return;
-}
-
-
-*/
-  /*
-
-
-function parse3H5DForecast(data) { //need to complete
-    
-    let day1 = {};
-    let day2 = {};
-    let day3 = {};
-    let day4 = {};
-    
-    //day1 dataparsing for weather description -> will extract to separate function
-    return getMostCommonWeatherDescription(data);
-
-    return;
-  }
-  
-  parse3H5DForecast(test3H5DForecast);
-
-  */
