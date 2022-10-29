@@ -1,6 +1,5 @@
 //Normal functions
 
-
 const test3H5DForecast = {
     "cod": "200",
     "message": 0,
@@ -1477,7 +1476,6 @@ const test3H5DForecast = {
     }
   }
 
-
 function separate3H5DDataToDays(data) { //TO COMPLETE
     //takes raw 3h5d data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
     let separated3HDailyData = [];
@@ -1489,17 +1487,13 @@ function separate3H5DDataToDays(data) { //TO COMPLETE
             dailyData.push(data.list[i]);
         } else {
             dateString = data.list[i].dt_txt.slice(0,10);
-            dailyData.length > 0 ? separated3HDailyData.push(dailyData) :   dailyData = null;
+            dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
             dailyData = [];
             dailyData.push(data.list[i]);
             }
         }
         return separated3HDailyData;
     }
-
-
-separate3H5DDataToDays(test3H5DForecast);
-
 
 function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
