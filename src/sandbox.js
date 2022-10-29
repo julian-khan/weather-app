@@ -1496,13 +1496,31 @@ function getMostCommonWeatherDescription(data) {
     return Object.keys(weatherDescCount).reduce((a, b) => weatherDescCount[a] > weatherDescCount[b] ? a : b);
 }
 
-function getDailyMinAndMaxTemp(data) {
+function getDailyTempArray(data) {
+    //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
+    dailyTemperatures = [];
+
     for (i = 0; i <= data.list.length - 1; i++) {
+        dailyTemperatures.push(data.list[i].main.temp);
+        console.log(data.list[i].main.temp, dailyTemperatures)
+        }
+}
+getDailyTempArray(test3H5DForecast);
 
-        var minTemp = 0;
-        var maxTemp = 0;
+console.log('Max', Math.max(...dailyTemperatures) )
 
-        
+/*
+function getDailyMinAndMaxTemp(data) { //need to finish this
+    var minTemp = 0;
+    var maxTemp = 0;
+    
+    for (i = 0; i <= data.list.length - 1; i++) {
+        indexedmintemp > maxTemp ? maxTemp = indexedmintemp; //log issue -> may not get correct min and max temp due to initial val set to 0 for both
+
+
+   
+
+
        
 
 
@@ -1510,8 +1528,12 @@ function getDailyMinAndMaxTemp(data) {
     return;
 }
 
-  
-function parse3H5DForecast(data) {
+
+*/
+  /*
+
+
+function parse3H5DForecast(data) { //need to complete
     
     let day1 = {};
     let day2 = {};
@@ -1526,3 +1548,4 @@ function parse3H5DForecast(data) {
   
   parse3H5DForecast(test3H5DForecast);
 
+  */
