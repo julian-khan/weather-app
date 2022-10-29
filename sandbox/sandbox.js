@@ -1476,8 +1476,8 @@ const test3H5DForecast = {
     }
   }
 
-function separate3H5DDataToDays(data) { //TO COMPLETE
-    //takes raw 3h5d data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
+function separate3H5DDataToDays(data) { 
+    //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
     let separated3HDailyData = [];
     let dailyData = [];
     let dateString = null;
@@ -1498,8 +1498,8 @@ function separate3H5DDataToDays(data) { //TO COMPLETE
 function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
 
-    for (i = 0; i <= data.list.length - 1; i++) {
-        let threeHourWeatherDesc = data.list[i].weather[0].main;
+    for (i = 0; i <= data.length - 1; i++) {
+        let threeHourWeatherDesc = data[i].weather[0].main;
 
         if (threeHourWeatherDesc in weatherDescCount) {
             weatherDescCount[threeHourWeatherDesc]++;
@@ -1519,8 +1519,8 @@ function getDailyTempArray(data) {
     //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
     dailyTemperatures = [];
 
-    for (i = 0; i <= data.list.length - 1; i++) {
-        dailyTemperatures.push(data.list[i].main.temp);
+    for (i = 0; i <= data.length - 1; i++) {
+        dailyTemperatures.push(data[i].main.temp);
         }
     
     return dailyTemperatures;
