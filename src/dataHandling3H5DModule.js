@@ -1,4 +1,4 @@
-const test3H5DForecast = {
+export const test3H5DForecast = {
     "cod": "200",
     "message": 0,
     "cnt": 40,
@@ -1496,7 +1496,7 @@ export function separate3H5DDataToDays(data) {
 export function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
 
-    for (i = 0; i <= data.length - 1; i++) {
+    for (let i = 0; i <= data.length - 1; i++) {
         let threeHourWeatherDesc = data[i].weather[0].main;
 
         if (threeHourWeatherDesc in weatherDescCount) {
@@ -1515,9 +1515,9 @@ export function getMostCommonWeatherDescription(Obj) {
 
 export function getDailyTempArray(data) {
     //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
-    dailyTemperatures = [];
+    let dailyTemperatures = [];
 
-    for (i = 0; i <= data.length - 1; i++) {
+    for (let i = 0; i <= data.length - 1; i++) {
         dailyTemperatures.push(data[i].main.temp);
         }
     

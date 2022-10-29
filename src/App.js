@@ -6,6 +6,7 @@ import LocationForm from './LocationForm';
 import GetLongAndLat from './GetLongAndLat';
 import GetCurrentWeatherData from './GetCurrentWeatherData';
 import use3H5DForecast from './use3H5DForecast';
+import Parse3H5D from './parse3H5D';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
-
+       <Parse3H5D data3H5D={retrieved3H5DWeatherData} />
     </div>
   );
 };
