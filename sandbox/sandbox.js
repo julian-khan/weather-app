@@ -1492,7 +1492,7 @@ function separate3H5DDataToDays(data) { //TO COMPLETE
             dailyData.push(data.list[i]);
             }
         }
-        return separated3HDailyData;
+    return separated3HDailyData;
     }
 
 function getDailyWeatherDescriptions(data) {
