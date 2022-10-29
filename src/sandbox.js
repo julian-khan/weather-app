@@ -1503,10 +1503,15 @@ function getDailyTempArray(data) {
     for (i = 0; i <= data.list.length - 1; i++) {
         dailyTemperatures.push(data.list[i].main.temp);
         }
+    
+        return dailyTemperatures;
 }
 
+function getDailyMaxAndMinTemp(Arr) {
+    return [Math.min(...Arr), Math.max(...Arr)];
+}
 
-console.log('Max', Math.max(...dailyTemperatures) )
+getDailyTempArray(test3H5DForecast)
 
 /*
 function getDailyMinAndMaxTemp(data) { //need to finish this
