@@ -1478,7 +1478,31 @@ const test3H5DForecast = {
   }
 
 
+function separate3H5DDataToDays(data) {
+    //takes raw 3h5d data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
+    let separated3HDailyData = [];
+    let dailyData = [];
+    let dateString = '';
 
+        for (i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
+            if (data.list[i].dt_txt === dateString) {
+                dailyData.push(data.list[i]);
+                
+                console.log('daily data', dailyData)
+            } else {
+                dateString = data.list[i].dt_txt;
+                separated3HDailyData.push(dailyData);
+                dailyData = [];
+                console.log('separated3hddailydata', separated3HDailyData);
+            }
+        }
+        
+        return separated3HDailyData;
+
+}
+
+
+separate3H5DDataToDays(test3H5DForecast);
 
 
 function getDailyWeatherDescriptions(data) {
