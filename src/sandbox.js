@@ -1478,28 +1478,24 @@ const test3H5DForecast = {
   }
 
 
-function separate3H5DDataToDays(data) {
+function separate3H5DDataToDays(data) { //TO COMPLETE
     //takes raw 3h5d data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
     let separated3HDailyData = [];
     let dailyData = [];
-    let dateString = '';
+    let dateString = null;
 
-        for (i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
-            if (data.list[i].dt_txt === dateString) {
-                dailyData.push(data.list[i]);
-                
-                console.log('daily data', dailyData)
-            } else {
-                dateString = data.list[i].dt_txt;
-                separated3HDailyData.push(dailyData);
-                dailyData = [];
-                console.log('separated3hddailydata', separated3HDailyData);
+    for (let i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
+        if (data.list[i].dt_txt.includes(dateString)) {
+            dailyData.push(data.list[i]);
+        } else {
+            dateString = data.list[i].dt_txt.slice(0,10);
+            dailyData.length > 0 ? separated3HDailyData.push(dailyData) :   dailyData = null;
+            dailyData = [];
+            dailyData.push(data.list[i]);
             }
         }
-        
         return separated3HDailyData;
-
-}
+    }
 
 
 separate3H5DDataToDays(test3H5DForecast);
