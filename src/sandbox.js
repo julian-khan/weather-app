@@ -1502,10 +1502,9 @@ function getDailyTempArray(data) {
 
     for (i = 0; i <= data.list.length - 1; i++) {
         dailyTemperatures.push(data.list[i].main.temp);
-        console.log(data.list[i].main.temp, dailyTemperatures)
         }
 }
-getDailyTempArray(test3H5DForecast);
+
 
 console.log('Max', Math.max(...dailyTemperatures) )
 
