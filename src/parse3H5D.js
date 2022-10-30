@@ -14,11 +14,13 @@ const [day5Data, setDay5Data] = useState(null);
 //keep the day1 to day5 data as objects
 
     useEffect(() => {
-      console.log('props for 3h5d data handling', data3H5D);
+        console.log('raw data', data3H5D);
+    setSeparated3HDailyData(dataHandling.separate3H5DDataToDays(data3H5D));
+    console.log('sep daily data', separated3HDailyData) //continue here onward
      
 
 
-          })
+          }, [data3H5D])
 
   return 
       };

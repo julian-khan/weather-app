@@ -1481,13 +1481,19 @@ export function separate3H5DDataToDays(data) {
     let dateString = null;
 
     for (let i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
-        if (data.list[i].dt_txt.includes(dateString)) {
+        if (data.list[i].dt_txt.includes(dateString) 
+            && i === data.list.length - 1
+            && dailyData.length > 1) {
+                dailyData.push(data.list[i]);
+                separated3HDailyData.push(dailyData);
+                break;
+            } else if (data.list[i].dt_txt.includes(dateString)) {
             dailyData.push(data.list[i]);
-        } else {
-            dateString = data.list[i].dt_txt.slice(0,10);
-            dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
-            dailyData = [];
-            dailyData.push(data.list[i]);
+            } else {
+                dateString = data.list[i].dt_txt.slice(0,10);
+                dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
+                dailyData = [];
+                dailyData.push(data.list[i]);
             }
         }
     return separated3HDailyData;
