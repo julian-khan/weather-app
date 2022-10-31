@@ -1,3 +1,5 @@
+import * as dataHandling from './dataHandling3H5DModule'
+ 
  const test3H5DForecast = {
     "cod": "200",
     "message": 0,
@@ -2965,88 +2967,5 @@
     }
 }
 
-/*
-function separate3H5DDataToDays(data) { 
-    //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
-    let separated3HDailyData = [];
-    let dailyData = [];
-    let dateString = null;
-
-    for (let i = 0; i <= data.list.length - 1; i++) { 
-        console.log(typeof data.list[i].dt_txt);
-        if (data.list[i].dt_txt.includes("dateString")) {
-            dailyData.push(data.list[i]);
-        } else {
-            dateString = data.list[i].dt_txt.slice(0,10);
-            dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
-            dailyData = [];
-            dailyData.push(data.list[i]);
-            }
-        }
-    return separated3HDailyData;
-    }
-    */
-    function separate3H5DDataToDays(data) { 
-        //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
-        let separated3HDailyData = [];
-        let dailyData = [];
-        let dateString = null;
-    
-        for (let i = 0; i <= data.list.length - 1; i++) {
-
-            if (data.list[i].dt_txt.includes(dateString) 
-            && i === data.list.length - 1
-            && dailyData.length > 1) {
-                dailyData.push(data.list[i]);
-                separated3HDailyData.push(dailyData);
-                break;
-            }
-            else if (data.list[i].dt_txt.includes(dateString)) {
-                dailyData.push(data.list[i]);
-            } else {
-                dateString = data.list[i].dt_txt.slice(0,10);
-                dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
-                dailyData = [];
-                dailyData.push(data.list[i]);
-                }
-            }
-        return separated3HDailyData;
-        }
-
-    const returnedSepDays = separate3H5DDataToDays(current3H5DForecastData);
-
- function getDailyWeatherDescriptions(data) {
-    var weatherDescCount = {};
-
-    for (let i = 0; i <= data.length - 1; i++) {
-        let threeHourWeatherDesc = data[i].weather[0].main;
-
-        if (threeHourWeatherDesc in weatherDescCount) {
-            weatherDescCount[threeHourWeatherDesc]++;
-            console.log(weatherDescCount[threeHourWeatherDesc]);
-        } else {
-            weatherDescCount[threeHourWeatherDesc] = 1;
-        }
-    }
-    return weatherDescCount;
-}
-
- function getMostCommonWeatherDescription(Obj) {
-    return Object.keys(Obj).reduce((a, b) => Obj[a] > Obj[b] ? a : b);
-}
-
- function getDailyTempArray(data) {
-    //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
-    let dailyTemperatures = [];
-
-    for (let i = 0; i <= data.length - 1; i++) {
-        dailyTemperatures.push(data[i].main.temp);
-        }
-    
-    return dailyTemperatures;
-}
-
- function getMinAndMaxTemp(Arr) {
-    return [Math.min(...Arr), Math.max(...Arr)];
-}
+console.log(dataHandling.separate3H5DDataToDays(test3H5DForecast));
 

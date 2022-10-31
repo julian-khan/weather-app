@@ -19,10 +19,8 @@ function App() {
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
 
-  const retrieved3H5DWeatherData = use3H5DForecast(longitude, latitude, units);
-
-  console.log('retrieved from custom hook', retrieved3H5DWeatherData)
-    
+  const threeH5DData = use3H5DForecast(longitude, latitude, units);
+  
 
 
   return (
@@ -31,7 +29,7 @@ function App() {
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
-       <Parse3H5D data3H5D={retrieved3H5DWeatherData} />
+       <Parse3H5D threeH5DData={threeH5DData}/>
     </div>
   );
 };

@@ -1472,7 +1472,7 @@ export const test3H5DForecast = {
         "sunrise": 1666992129,
         "sunset": 1667039895
     }
-  };
+  }
 
 export function separate3H5DDataToDays(data) { 
     //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
@@ -1480,7 +1480,7 @@ export function separate3H5DDataToDays(data) {
     let dailyData = [];
     let dateString = null;
 
-    for (let i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
+    for (let i = 0; i <= data.list.length - 1; i++) {
         if (data.list[i].dt_txt.includes(dateString) 
             && i === data.list.length - 1
             && dailyData.length > 1) {
@@ -1497,7 +1497,7 @@ export function separate3H5DDataToDays(data) {
             }
         }
     return separated3HDailyData;
-    };
+    }
 
 export function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
@@ -1513,11 +1513,11 @@ export function getDailyWeatherDescriptions(data) {
         }
     }
     return weatherDescCount;
-};
+}
 
 export function getMostCommonWeatherDescription(Obj) {
     return Object.keys(Obj).reduce((a, b) => Obj[a] > Obj[b] ? a : b);
-};
+}
 
 export function getDailyTempArray(data) {
     //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
@@ -1528,9 +1528,9 @@ export function getDailyTempArray(data) {
         }
     
     return dailyTemperatures;
-};
+}
 
 export function getMinAndMaxTemp(Arr) {
     return [Math.min(...Arr), Math.max(...Arr)];
-};
+}
 
