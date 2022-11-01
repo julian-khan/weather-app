@@ -33,7 +33,6 @@ return summarisedDay3H;
       const separated3H5D = dataHandling.separate3H5DDataToDays(props.threeH5DData);
       const summaryOutput = getSummaries3H5D(separated3H5D);
       setSummaries3H5D(summaryOutput);
-      console.log(summaries3H5D)
     }
   }, [props.threeH5DData]);
 }
