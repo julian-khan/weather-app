@@ -3,9 +3,7 @@ import * as dataHandling from './dataHandling3H5DModule'
 
 export default function Parse3H5D(props) {
 //will take the original full 3h5d json object as a prop
-const [separated3HDailyData, setSeparated3HDailyData] = useState(null);
 const [summaries3H5D, setSummaries3H5D] = useState(null);
-
 
 function getSummaries3H5D(separated3H5D) {
   let summarisedDay3H = [];
@@ -33,10 +31,9 @@ return summarisedDay3H;
   useEffect(() => {
     if (props.threeH5DData) {  
       const separated3H5D = dataHandling.separate3H5DDataToDays(props.threeH5DData);
-      setSeparated3HDailyData(separated3H5D);
-
       const summaryOutput = getSummaries3H5D(separated3H5D);
       setSummaries3H5D(summaryOutput);
+      console.log(summaries3H5D)
     }
   }, [props.threeH5DData]);
 }
