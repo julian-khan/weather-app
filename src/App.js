@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 
@@ -7,6 +6,7 @@ import GetLongAndLat from './GetLongAndLat';
 import GetCurrentWeatherData from './GetCurrentWeatherData';
 import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
+import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 
 
 function App() {
