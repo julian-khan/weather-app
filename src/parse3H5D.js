@@ -20,7 +20,6 @@ function getSummaries3H5D(separated3H5D) {
 
     const dailyTempArray = dataHandling.getDailyTempArray(dayForData);
     const MinAndMaxTemp = dataHandling.getMinAndMaxTemp(dailyTempArray);
-    console.log(MinAndMaxTemp);
     dayListOutput.MinAndMaxTemp = MinAndMaxTemp;
 
     summarisedDay3H.push(dayListOutput);

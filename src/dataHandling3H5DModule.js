@@ -1507,7 +1507,6 @@ export function getDailyWeatherDescriptions(data) {
 
         if (threeHourWeatherDesc in weatherDescCount) {
             weatherDescCount[threeHourWeatherDesc]++;
-            console.log(weatherDescCount[threeHourWeatherDesc]);
         } else {
             weatherDescCount[threeHourWeatherDesc] = 1;
         }
