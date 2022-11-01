@@ -27,23 +27,16 @@ function getSummaries3H5D(separated3H5D) {
 
     summarisedDay3H.push(dayListOutput);
 }
-console.log(summarisedDay3H)
 return summarisedDay3H;
 }
-
-
 
   useEffect(() => {
     if (props.threeH5DData) {  
       const separated3H5D = dataHandling.separate3H5DDataToDays(props.threeH5DData);
       setSeparated3HDailyData(separated3H5D);
 
-      const testVariable = getSummaries3H5D(separated3H5D);
-      console.log('test?', testVariable)
-// continue here, rename testvariable and save it to state. This component is currently working
-
+      const summaryOutput = getSummaries3H5D(separated3H5D);
+      setSummaries3H5D(summaryOutput);
     }
   }, [props.threeH5DData]);
-
-
 }
