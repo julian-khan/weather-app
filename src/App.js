@@ -28,6 +28,7 @@ function App() {
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
+       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} />
        <Parse3H5D threeH5DData={threeH5DData}/>
     </div>
   );
