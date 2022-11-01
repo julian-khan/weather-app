@@ -10,7 +10,7 @@ const [summaries3H5D, setSummaries3H5D] = useState(null);
 function getSummaries3H5D(separated3H5D) {
   let summarisedDay3H = [];
 
-  for (let i = 0; i <= separated3HDailyData.length - 1; i++) {
+  for (let i = 0; i <= separated3H5D.length - 1; i++) {
     let dayListOutput = {};
     dayListOutput.dayNumber = i+1;
 
@@ -27,16 +27,20 @@ function getSummaries3H5D(separated3H5D) {
 
     summarisedDay3H.push(dayListOutput);
 }
+console.log(summarisedDay3H)
 return summarisedDay3H;
 }
 
+
+
   useEffect(() => {
     if (props.threeH5DData) {  
-      const separated3H5D = dataHandling.separate3H5DDataToDays(props.threeH5DData)
+      const separated3H5D = dataHandling.separate3H5DDataToDays(props.threeH5DData);
       setSeparated3HDailyData(separated3H5D);
 
-      //getSummaries3H5D(separated3H5D);
-
+      const testVariable = getSummaries3H5D(separated3H5D);
+      console.log('test?', testVariable)
+// continue here, rename testvariable and save it to state. This component is currently working
 
     }
   }, [props.threeH5DData]);

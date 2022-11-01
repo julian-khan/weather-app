@@ -20,7 +20,6 @@ function App() {
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
 
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
-  
 
 
   return (
