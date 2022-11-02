@@ -48,8 +48,29 @@ const testCurrentData = {
     "cod": 200
   }                 
 
+  let compiledCurrentWeatherInfo = {};
 
+  const compileCurrentWeatherInfo = (currentWeatherObj) => {
+    // This function will recursively iterate through the current weather key (depth-first
+    // search), pushing the required keyerties and their values to a new object to be returned.
 
+    const isObject = (value) => {
+      return value && typeof value === "object" && !Array.isArray(value);
+    };
+
+    const keysToPush = ['weather', 'wind', 'name', 'clouds', 'main', 'description', 'temp', 
+    'visibility', 'feels_like', 'humidity', 'clouds', 'dt', 'sunrise', 'sunset']
+
+    const arrayData = Object.entries(currentWeatherObj);
+
+    for (let i = 0; i <= arrayData.length - 1; i++) {
+      if (keysToPush.includes(arrayData[i][0])) {
+        console.log('key included', arrayData[i][0])
+        compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1]
+      }
+      if (isObject(arrayData[i][1])) {
+        compileCurrentWeatherInfo(arrayData[i][1])
+      }
+    }
+  }
   
-
-console.log(compileCurrentWeatherInfo(testCurrentData));
