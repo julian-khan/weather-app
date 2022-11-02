@@ -4,16 +4,15 @@ export default function ParseCurrentWeatherData({currentWeatherData}) {
   let [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
 
   const getDateAtLocation = (dateObj) => {
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    setDateAtTargetLocation(dateObj.toLocaleDateString("en-US", options)); //change to "en-GB"
+    }
 
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  setDateAtTargetLocation(dateObj.toLocaleDateString("en-US", options));
+  const getTimeAtTargetLocation = (dateObj) => {
+    const options = {hour12: 'true', hour: 'numeric', minute: 'numeric'}
+  
+        
   }
-
-  const getTimeAtTargetLocation = () => {
-    
-  }
-
-
 
 
 
