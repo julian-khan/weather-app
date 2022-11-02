@@ -48,33 +48,8 @@ const testCurrentData = {
     "cod": 200
   }                 
 
-const compileCurrentWeatherInfo = (currentWeatherData) => {
-    // This function will recursively iterate through the current weather prop (depth-first
-    // search), pushing the required properties and their values to a new object to be returned.
-
-    let currentWeatherInfo = {};
-
-    const isObject = (value) => {
-      return !!(value && typeof value === "object" && !Array.isArray(value));
-    };
-
-    const keysToPush = ['weather', 'wind', 'name', 'clouds', 'main', 'description', 'temp', 
-    'visibility', 'feels_like', 'humidity', 'clouds', 'dt', 'sunrise', 'sunset']
-
-    for (const prop in currentWeatherData) {
-      if (!isObject(prop)) {
-        console.log(prop)
-        return
-      }
-
-      if (keysToPush.includes(`${prop}`)) {
-        console.log(prop)
-        currentWeatherInfo.prop = currentWeatherData.prop;
-      }
-    }
-    console.log(currentWeatherInfo);
 
 
-  }
+  
 
-  compileCurrentWeatherInfo(testCurrentData);
+console.log(compileCurrentWeatherInfo(testCurrentData));

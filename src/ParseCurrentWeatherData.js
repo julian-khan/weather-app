@@ -31,14 +31,14 @@ export default function ParseCurrentWeatherData({currentWeatherData}) {
     'visibility', 'feels_like', 'humidity', 'clouds', 'dt', 'sunrise', 'sunset']
 
     for (const prop in currentWeatherData) {
-      if (!isObject(prop)) {
-        console.log(prop)
-        return
+      if (isObject(prop)) {
+        console.log('before recursion', prop)
+        compileCurrentWeatherInfo(prop);
       }
 
       if (keysToPush.includes(`${prop}`)) {
         console.log(prop)
-        currentWeatherInfo.prop = currentWeatherData.prop;
+        currentWeatherInfo[prop] = currentWeatherData[prop];
       }
     }
     console.log(currentWeatherInfo);
