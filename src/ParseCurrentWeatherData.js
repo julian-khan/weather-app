@@ -14,36 +14,33 @@ export default function ParseCurrentWeatherData({currentWeatherData}) {
     setTimeAtTargetLocation(dateObj.toLocaleString('en-GB', options))    
   }
 
- 
-
+const handleCurrentWeatherCompiling = (currentWeatherData) => {
+  let compiledCurrentWeatherInfo = {};
+  compileCurrentWeatherInfo(currentWeatherData, compileCurrentWeatherInfo);
+}
 
   const compileCurrentWeatherInfo = (currentWeatherData) => {
     // This function will recursively iterate through the current weather prop (depth-first
     // search), pushing the required properties and their values to a new object to be returned.
 
-    let currentWeatherInfo = {};
-
     const isObject = (value) => {
-      return !!(value && typeof value === "object" && !Array.isArray(value));
+      return value && typeof value === "object" && !Array.isArray(value);
     };
 
     const keysToPush = ['weather', 'wind', 'name', 'clouds', 'main', 'description', 'temp', 
     'visibility', 'feels_like', 'humidity', 'clouds', 'dt', 'sunrise', 'sunset']
 
-    for (const prop in currentWeatherData) {
-      if (isObject(prop)) {
-        console.log('before recursion', prop)
-        compileCurrentWeatherInfo(prop);
-      }
+    const arrayData = Object.entries(currentWeatherObj);
 
-      if (keysToPush.includes(`${prop}`)) {
-        console.log(prop)
-        currentWeatherInfo[prop] = currentWeatherData[prop];
+    for (let i = 0; i <= arrayData.length - 1; i++) {
+      if (keysToPush.includes(arrayData[i][0])) {
+        console.log('key included', arrayData[i][0])
+        compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1]
+      }
+      if (isObject(arrayData[i][1])) {
+        compileCurrentWeatherInfo(arrayData[i][1])
       }
     }
-    console.log(currentWeatherInfo);
-
-
   }
 
   useEffect(() => {
