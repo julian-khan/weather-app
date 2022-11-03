@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 export default function ParseCurrentWeatherData({currentWeatherData}) {
   let [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
   let [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
+  let [processedCurrentWeatherData, setProcessedCurrentWeatherData] = useState(null);
 
   const getDateAtLocation = (dateObj) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -20,9 +21,10 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
 
   let compiledCurrentWeatherInfo = {};
   compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
-  console.log('see if it worked', compiledCurrentWeatherInfo)
-  // det the function works and then set state with it. NOTE: the error is in the line
-  // compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1] when try to add 'temp' to dict
+  setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
+
+  console.log('see if it worked', processedCurrentWeatherData);
+ 
 }
 
   const compileCurrentWeatherInfo = (currentWeatherObj, compiledCurrentWeatherInfo) => {
@@ -58,5 +60,5 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
       handleCurrentWeatherCompiling(currentWeatherData);
       
     }
-  });
+  }, [currentWeatherData]);
 }
