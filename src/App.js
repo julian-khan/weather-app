@@ -1,12 +1,16 @@
 import './App.css';
 import {useState, useEffect} from 'react';
 
+//Data fetching and processing components
 import LocationForm from './LocationForm';
 import GetLongAndLat from './GetLongAndLat';
 import GetCurrentWeatherData from './GetCurrentWeatherData';
 import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
 import ParseCurrentWeatherData from './ParseCurrentWeatherData';
+
+//UI components
+import UITopSection from './UITopSection';
 
 
 function App() {
@@ -16,6 +20,7 @@ function App() {
 
   const [longitude, setLongitude] = useState(115.857048);
   const [latitude, setLatitude] = useState(-31.953512);
+//combine longitude and latitude into one state variable - an array or standard object
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
 
