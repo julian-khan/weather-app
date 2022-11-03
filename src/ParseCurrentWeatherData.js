@@ -58,7 +58,6 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
       getTimeAtTargetLocation(dateOriginalForm);
 
       handleCurrentWeatherCompiling(currentWeatherData);
-      
     }
   }, [currentWeatherData]);
 }
