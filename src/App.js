@@ -27,8 +27,8 @@ function App() {
 
 
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
-
-
+  const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
+  
   return (
 
     <div>
@@ -36,9 +36,9 @@ function App() {
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
        <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
-       <Parse3H5D threeH5DData={threeH5DData}/>
+       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries}/>
 
-       <UITopSection threeH5DData={threeH5DData}/>
+       <UITopSection processedCurrentWeatherData={processedCurrentWeatherData}/>
     </div>
   );
 };
