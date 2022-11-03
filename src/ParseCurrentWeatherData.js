@@ -16,10 +16,13 @@ export default function ParseCurrentWeatherData({currentWeatherData}) {
 
 const handleCurrentWeatherCompiling = (currentWeatherData) => {
   let compiledCurrentWeatherInfo = {};
-  compileCurrentWeatherInfo(currentWeatherData, compileCurrentWeatherInfo);
+  compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
+  console.log('see if it worked', compiledCurrentWeatherInfo)
+  // det the function works and then set state with it. NOTE: the error is in the line
+  // compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1] when try to add 'temp' to dict
 }
 
-  const compileCurrentWeatherInfo = (currentWeatherData) => {
+  const compileCurrentWeatherInfo = (currentWeatherObj, compiledCurrentWeatherInfo) => {
     // This function will recursively iterate through the current weather prop (depth-first
     // search), pushing the required properties and their values to a new object to be returned.
 
@@ -35,12 +38,14 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
     for (let i = 0; i <= arrayData.length - 1; i++) {
       if (keysToPush.includes(arrayData[i][0])) {
         console.log('key included', arrayData[i][0])
+        console.log(arrayData[i][1]);
         compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1]
       }
       if (isObject(arrayData[i][1])) {
-        compileCurrentWeatherInfo(arrayData[i][1])
+        compileCurrentWeatherInfo(arrayData[i][1], compiledCurrentWeatherInfo)
       }
     }
+    return 
   }
 
   useEffect(() => {
@@ -49,7 +54,8 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
       getDateAtLocation(dateOriginalForm);
       getTimeAtTargetLocation(dateOriginalForm);
 
-      compileCurrentWeatherInfo(currentWeatherData);
+      handleCurrentWeatherCompiling(currentWeatherData);
+      
     }
   });
 }
