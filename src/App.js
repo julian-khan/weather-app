@@ -35,6 +35,8 @@ function App() {
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
        <ParseCurrentWeatherData currentWeatherData={currentWeatherData} />
        <Parse3H5D threeH5DData={threeH5DData}/>
+
+       <UITopSection threeH5DData={threeH5DData}/>
     </div>
   );
 };
