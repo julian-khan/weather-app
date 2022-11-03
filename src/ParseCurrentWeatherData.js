@@ -1,10 +1,9 @@
 import {useState, useEffect} from 'react';
 
 export default function ParseCurrentWeatherData({currentWeatherData}) {
-  let [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
-  let [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
-  let [processedCurrentWeatherData, setProcessedCurrentWeatherData] = useState(null);
-
+  const [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
+  const [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
+ 
   const getDateAtLocation = (dateObj) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     setDateAtTargetLocation(dateObj.toLocaleDateString("en-US", options)); //change to "en-GB"
