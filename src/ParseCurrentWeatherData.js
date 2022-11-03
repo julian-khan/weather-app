@@ -15,6 +15,9 @@ export default function ParseCurrentWeatherData({currentWeatherData}) {
   }
 
 const handleCurrentWeatherCompiling = (currentWeatherData) => {
+/* This function is passed the raw current weather data and modifies the compiledCurrentWeatherInfo
+  object contained within its function scope, to be passed as a prop to UI elements. */
+
   let compiledCurrentWeatherInfo = {};
   compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
   console.log('see if it worked', compiledCurrentWeatherInfo)
@@ -30,15 +33,13 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
       return value && typeof value === "object" && !Array.isArray(value);
     };
 
-    const keysToPush = ['weather', 'wind', 'name', 'clouds', 'main', 'description', 'temp', 
+    const keysToPush = ['weather', 'wind', 'name', 'clouds', 'description', 'temp', 
     'visibility', 'feels_like', 'humidity', 'clouds', 'dt', 'sunrise', 'sunset']
 
     const arrayData = Object.entries(currentWeatherObj);
 
     for (let i = 0; i <= arrayData.length - 1; i++) {
       if (keysToPush.includes(arrayData[i][0])) {
-        console.log('key included', arrayData[i][0])
-        console.log(arrayData[i][1]);
         compiledCurrentWeatherInfo[arrayData[i][0]] = arrayData[i][1]
       }
       if (isObject(arrayData[i][1])) {
