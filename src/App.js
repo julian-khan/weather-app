@@ -23,6 +23,8 @@ function App() {
 //combine longitude and latitude into one state variable - an array or standard object
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
+  const [processedCurrentWeatherData, setProcessedCurrentWeatherData] = useState(null);
+
 
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
 
@@ -33,7 +35,7 @@ function App() {
        <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
        <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
        <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
-       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} />
+       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
        <Parse3H5D threeH5DData={threeH5DData}/>
 
        <UITopSection threeH5DData={threeH5DData}/>

@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-export default function ParseCurrentWeatherData({currentWeatherData}) {
+export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
   const [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
   const [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
  
@@ -21,8 +21,6 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
   let compiledCurrentWeatherInfo = {};
   compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
   setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
-
-  console.log('see if it worked', processedCurrentWeatherData);
  
 }
 
