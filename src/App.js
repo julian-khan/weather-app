@@ -9,11 +9,8 @@ import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
 import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 
-
 //UI components
 import AppUIContainer from './AppUIContainer';
-import UITopSection from './UITopSection';
-
 
 function App() {
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
