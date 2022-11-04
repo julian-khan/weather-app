@@ -6,7 +6,7 @@ export default function LocationForm({setLocationName}) {
     function handleChange(event) {
         setFormValue(event.target.value);
     };
-    
+
     function handleSubmit(event) {
         event.preventDefault();
         setLocationName(formValue);
@@ -15,7 +15,7 @@ export default function LocationForm({setLocationName}) {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-            Location:
+            Search for a city:  
             <input type="text" value={formValue} onChange={handleChange}/>
             </label>
             <input type="submit" value="Submit" />

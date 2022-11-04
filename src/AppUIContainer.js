@@ -8,10 +8,7 @@ export default function AppUIContainer({setLocationName, processedCurrentWeather
       <div>
         <div>A Weather App</div>
         <div>
-          <span>Search for a city:</span>
-        <LocationForm setLocationName={setLocationName}/>
-
-
+          <LocationForm setLocationName={setLocationName}/>
         </div>
        
        <UITopSection processedCurrentWeatherData={processedCurrentWeatherData}/>
