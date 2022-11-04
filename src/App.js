@@ -43,11 +43,11 @@ function App() {
       <AppUIContainer 
       processedCurrentWeatherData={processedCurrentWeatherData} 
       threeHDDailySummaries={threeHDDailySummaries}
-      
-       />
+      setLocationName = {setLocationName} 
+      />
 
 
-      <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
+   
 
     
     </div>
