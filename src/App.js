@@ -34,14 +34,20 @@ function App() {
   return (
 
     <div>
-       <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
-       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
-       <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
-       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
-       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries}/>
+  
+      <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
+      <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
+      <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
+      <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries}/>
 
-       <AppUIContainer processedCurrentWeatherData={processedCurrentWeatherData} 
-       threeHDDailySummaries={threeHDDailySummaries}/>
+      <AppUIContainer 
+      processedCurrentWeatherData={processedCurrentWeatherData} 
+      threeHDDailySummaries={threeHDDailySummaries}
+      
+       />
+
+
+      <LocationForm locationName = {locationName} setLocationName={setLocationName}/>
 
     
     </div>

@@ -5,6 +5,7 @@ export default function AppUIContainer({processedCurrentWeatherData}) {
 
     return (
       <div>
+        <div>A Weather App</div>
        <UITopSection processedCurrentWeatherData={processedCurrentWeatherData}/>
       </div>
 
