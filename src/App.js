@@ -9,7 +9,9 @@ import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
 import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 
+
 //UI components
+import AppUIContainer from './AppUIContainer';
 import UITopSection from './UITopSection';
 
 
@@ -38,7 +40,10 @@ function App() {
        <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
        <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries}/>
 
-       <UITopSection processedCurrentWeatherData={processedCurrentWeatherData}/>
+       <AppUIContainer processedCurrentWeatherData={processedCurrentWeatherData} 
+       threeHDDailySummaries={threeHDDailySummaries}/>
+
+    
     </div>
   );
 };
