@@ -6,6 +6,7 @@ export default function AppUIContainer({setLocationName, processedCurrentWeather
     return (
       <div>
         <div>A Weather App</div>
+        <div> Contact me: //Insert email and linkedin icons and implement required logic</div>
         <div>
           <LocationForm setLocationName={setLocationName}/>
         </div>

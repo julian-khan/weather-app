@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
 
 export default function UITopSection({processedCurrentWeatherData, todayMinAndMax}) {
+  /* The weather icons used are from Wikimedia Commons:
+  https://commons.wikimedia.org/wiki/Category:Weather_icons 
+  */
 
     return (
       <div>
