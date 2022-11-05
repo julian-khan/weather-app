@@ -1,14 +1,12 @@
 import {useState, useEffect} from 'react';
+import GetCurrentWeatherData from './GetCurrentWeatherData';
 
 export default function UITopSection({processedCurrentWeatherData, todayMinAndMax}) {
   /* The weather icons used are from Wikimedia Commons:
   https://commons.wikimedia.org/wiki/Category:Weather_icons 
   */
 
-/*
-
-    */
-
+  
     return (
       <div>
         <div>{processedCurrentWeatherData.name}</div> // Add weather image depending on weather inline with city name
@@ -22,5 +20,4 @@ export default function UITopSection({processedCurrentWeatherData, todayMinAndMa
         </div>
       </div>
     );
-
-    };
+  }
