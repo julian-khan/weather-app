@@ -9,7 +9,7 @@ export default function AppUIContainer({setLocationName, processedCurrentWeather
         <div>
           <LocationForm setLocationName={setLocationName}/>
         </div>
-       <UITopSection processedCurrentWeatherData={processedCurrentWeatherData}/>
+       <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax = {threeHDDailySummaries[0].MinAndMaxTemp}/>
       </div>
 
     );
