@@ -1,8 +1,7 @@
 import './App.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 //Data fetching and processing components
-import LocationForm from './LocationForm';
 import GetLongAndLat from './GetLongAndLat';
 import GetCurrentWeatherData from './GetCurrentWeatherData';
 import use3H5DForecast from './use3H5DForecast';
