@@ -5,7 +5,11 @@ export default function AppUIContainer({setLocationName, processedCurrentWeather
   let todayMinAndMax = null;
 
   if (threeHDDailySummaries) { 
-  todayMinAndMax = threeHDDailySummaries[0].MinAndMaxTemp
+    todayMinAndMax = threeHDDailySummaries[0].MinAndMaxTemp
+}
+
+const createUITopSection = () => {
+  return <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />;
 }
 
     return (
@@ -15,7 +19,8 @@ export default function AppUIContainer({setLocationName, processedCurrentWeather
         <div>
           <LocationForm setLocationName={setLocationName}/>
         </div>
-        <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax}/>
+       {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
+       
       </div>
 
     );
