@@ -15,13 +15,14 @@ const createUITopSection = () => {
 
     return (
       <div>
-              {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
-        <div> <ContactMeHeader /> </div>
+        {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
+        <div> 
+          <ContactMeHeader /> 
+        </div>
         <div>
           <UILocationSearch setLocationName={setLocationName}/>
         </div>
- 
-       
+
       </div>
 
     );

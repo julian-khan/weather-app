@@ -30,7 +30,7 @@ export default function LocationForm({setLocationName}) {
     return (
     
 
-<form onSubmit={handleSubmit}>   
+<form onSubmit={handleSubmit} className='my-8 mx-5'>   
     <label htmlFor="city-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
     <div className="relative">
         <input type="text" id="city-search" value={formValue} onChange={handleChange} className="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border
