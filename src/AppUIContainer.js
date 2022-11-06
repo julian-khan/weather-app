@@ -1,6 +1,6 @@
 import UITopSection from './UITopSection';
 import ContactMeHeader from './ContactMeHeader';
-import LocationForm from './LocationForm';
+import UILocationSearch from './UILocationSearch';
 
 export default function AppUIContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries}) {
   let todayMinAndMax = null;
@@ -18,7 +18,7 @@ const createUITopSection = () => {
               {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
         <div> <ContactMeHeader /> </div>
         <div>
-          <LocationForm setLocationName={setLocationName}/>
+          <UILocationSearch setLocationName={setLocationName}/>
         </div>
  
        

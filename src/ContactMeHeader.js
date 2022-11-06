@@ -7,7 +7,7 @@ export default function ContactMeHeader() {
 
   return (
     <div className="flex flex-row items-center justify-between mx-20">
-      <span>Contact me</span>
+      <span className = 'text-2xl tracking-tight text-gray-900 sm:text-3xl md:text-4xl'>Contact me</span>
 
       <span className="flex flex-row items-center "> 
         <img src={linkedinicon} className='w-9' /> 

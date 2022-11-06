@@ -27,6 +27,8 @@ function App() {
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
   const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
   
+
+  console.log(processedCurrentWeatherData)
   return (
     
 
