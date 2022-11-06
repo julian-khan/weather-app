@@ -8,7 +8,11 @@ export default function UITopSection({processedCurrentWeatherData, todayMinAndMa
 
   
     return (
-      <div>
+
+      <div className='sm:text-center lg:text-left'>
+          <h1 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline ">A weather app</span>
+          </h1>
         <div>{processedCurrentWeatherData.name}</div> // Add weather image depending on weather inline with city name
         <div>
           Today: {processedCurrentWeatherData.weather[0].main}
