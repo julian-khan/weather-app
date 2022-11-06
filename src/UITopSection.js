@@ -19,8 +19,8 @@ export default function UITopSection({processedCurrentWeatherData, todayMinAndMa
 
     return (
       <div className='sm:text-center lg:text-left'>
-          <h1 class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-            <span class="block xl:inline ">A weather app</span>
+          <h1 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <span className="block xl:inline ">A weather app</span>
           </h1>
       </div>      
     );
