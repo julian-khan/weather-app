@@ -1,5 +1,12 @@
+import {getWeatherIcon} from './functions/getWeatherIcon';
+
 
 export default function UICurrentWeatherInfo({processedCurrentWeatherData}) {
+
+console.log(getWeatherIcon())
+
+
+
  
 
   if (processedCurrentWeatherData)  { return (
