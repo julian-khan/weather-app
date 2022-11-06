@@ -4,7 +4,7 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
   const [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
   const [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
  
-  const getDateAtLocation = (dateObj) => {
+  const getDateAtLocation = (dateObj) => { //rename to indicate that the function is setting the date
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     setDateAtTargetLocation(dateObj.toLocaleDateString("en-US", options)); //change to "en-GB"
     }
