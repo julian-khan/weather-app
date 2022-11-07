@@ -1,17 +1,17 @@
 import {useState, useEffect} from 'react';
 
 export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
-  const [dateAtTargetLocation, setDateAtTargetLocation] = useState(null);
+  const [dateAtTargetLocation, setDateAtTargetLocation] = useState(null); //delte t
   const [timeAtTargetLocation, setTimeAtTargetLocation] = useState(null);
  
   const getDateAtLocation = (dateObj) => { //rename to indicate that the function is setting the date
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    setDateAtTargetLocation(dateObj.toLocaleDateString("en-US", options)); //change to "en-GB"
+    return dateObj.toLocaleDateString("en-US", options); //change to "en-GB"
     }
 
   const getTimeAtTargetLocation = (dateObj) => { //rename to indicate that the function is setting the date
     const options = {hour12: 'true', hour: 'numeric', minute: 'numeric'}
-    setTimeAtTargetLocation(dateObj.toLocaleString('en-GB', options))    
+    return dateObj.toLocaleString('en-GB', options)    
   }
 
 const handleCurrentWeatherCompiling = (currentWeatherData) => {
@@ -20,6 +20,14 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
 
   let compiledCurrentWeatherInfo = {};
   compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
+
+  let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
+  const parsedDate = getDateAtLocation(dateOriginalForm); //change these two console.logs so that they update the compiledCurrentWeatherInfo obj with date and time
+  compiledCurrentWeatherInfo['date'] = parsedDate;
+
+  const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
+  compiledCurrentWeatherInfo['time'] = parsedTime;
+
   setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
  
 }
@@ -50,10 +58,6 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
 
   useEffect(() => {
     if (currentWeatherData) {  
-      let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
-      getDateAtLocation(dateOriginalForm);
-      getTimeAtTargetLocation(dateOriginalForm);
-
       handleCurrentWeatherCompiling(currentWeatherData);
     }
   }, [currentWeatherData]);

@@ -11,6 +11,7 @@ import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 //UI components
 import AppUIContainer from './AppUIContainer';
 
+
 function App() {
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
 
@@ -28,7 +29,7 @@ function App() {
   const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
   
 
-  console.log(processedCurrentWeatherData)
+  console.log(processedCurrentWeatherData, 'jmmmmmmmm')
   return (
     
 
