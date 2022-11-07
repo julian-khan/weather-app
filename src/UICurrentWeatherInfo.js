@@ -1,13 +1,7 @@
-import GetWeatherIcon from './functions/GetWeatherIcon';
+import GetWeatherIcon from './GetWeatherIcon';
 
 
 export default function UICurrentWeatherInfo({processedCurrentWeatherData}) {
-
-if (processedCurrentWeatherData) {  
-  GetWeatherIcon(processedCurrentWeatherData)
-}
-
-
 
  
 
@@ -15,7 +9,8 @@ if (processedCurrentWeatherData) {
     <div>
       <div> 
       <span>{processedCurrentWeatherData.name}</span>
-      <span>weather icon**</span>
+      <span> <GetWeatherIcon processedCurrentWeatherData={processedCurrentWeatherData} />
+      </span>
     </div>
   <div>
     <span>Min: </span> <span>Max: </span>

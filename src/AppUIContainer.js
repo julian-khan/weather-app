@@ -14,7 +14,7 @@ const createUITopSection = () => {
   return <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />;
 }
 
-console.log(processedCurrentWeatherData)
+
 
     return (
       <div>
