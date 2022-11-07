@@ -1,10 +1,11 @@
-import {getWeatherIcon} from './functions/getWeatherIcon';
+import GetWeatherIcon from './functions/GetWeatherIcon';
 
 
 export default function UICurrentWeatherInfo({processedCurrentWeatherData}) {
 
-  console.log(processedCurrentWeatherData)
-console.log('testing function', getWeatherIcon(processedCurrentWeatherData))
+if (processedCurrentWeatherData) {  
+  GetWeatherIcon(processedCurrentWeatherData)
+}
 
 
 
