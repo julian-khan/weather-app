@@ -1,4 +1,5 @@
 import CloudsDay from './weather-icons/icons/CloudsDay';
+import ClearNight from './weather-icons/icons/ClearNight';
 
 
 export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make this function generic so that it can be reused for 5-day daily components
@@ -38,12 +39,14 @@ console.log('current weather', processedCurrentWeatherData)
 
     const iconDirectory = './weather-icons/icons/';
 
-  
+  /*
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clear') {
     return <img src={'./weather-icons/icons/' + weatherIconMapping.clearDay} />
   } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') {
     return <CloudsDay />
   }
+*/
+  return <ClearNight />
 
 
 
