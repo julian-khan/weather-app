@@ -1,10 +1,11 @@
 
 
-export const isDay = () => {
-  //complete this function
+export const isDay = (currentDt, sunsetDt) => {
+  //Takes two Unix timestamps as arguments
+  return currentDt < sunsetDt? true : false;
 }
 
- export const getWeatherIcon = () => { //make this function generic so that it can be reused for 5-day daily components
+ export const getWeatherIcon = (processedCurrentWeatherData) => { //make this function generic so that it can be reused for 5-day daily components
   
   const weatherIconMapping = {
     clearDay: "src/weather-icons/icons/weather-clear.svg",
@@ -25,7 +26,7 @@ export const isDay = () => {
     stormDay: "src/weather-icons/icons/weather-storm.svg"
     }
 
-  return weatherIconMapping
+  return 
 
 };
 
