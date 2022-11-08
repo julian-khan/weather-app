@@ -16,28 +16,6 @@ console.log('current weather', processedCurrentWeatherData)
     return currentDt < sunsetDt? true : false;
   }
 
-  console.log()
-  
-   const weatherIconMapping = {
-      clearDay: "weather-clear.svg",
-      clearNight: "weather-clear-night.svg",
-      cloudsDay: "weather-clouds.svg",
-      cloudsNight: "weather-clouds-nights.svg",
-      fewCloudsDay: "weather-few-clouds.svg", 
-      fewCloudsNight: "weather-few-clouds-night.svg",
-      freezingRain: "weather-freezing-rain.svg",
-      hail: "weather-hail.svg",
-      manyClouds: "weather-many-clouds.svg",
-      overcast: "weather-overcast.svg",
-      showersDay: "weather-showers-day.svg",
-      showersNight: "weather-showers-night.svg",
-      showers: "weather-showers.svg",
-      snow: "weather-snow.svg",
-      stormNight: "weather-storm-night.svg",
-      stormDay: "weather-storm.svg"
-    }
-
-    const iconDirectory = './weather-icons/icons/';
 
   /*
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clear') {
