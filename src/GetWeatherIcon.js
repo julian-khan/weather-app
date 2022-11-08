@@ -1,5 +1,12 @@
-import CloudsDay from './weather-icons/icons/CloudsDay';
+import ClearDay from './weather-icons/icons/ClearDay';
 import ClearNight from './weather-icons/icons/ClearNight';
+import CloudsDay from './weather-icons/icons/CloudsDay';
+import ManyClouds from './weather-icons/icons/ManyClouds';
+import Showers from './weather-icons/icons/Showers';
+import ShowersNight from './weather-icons/icons/ShowersNight';
+import Snow from './weather-icons/icons/Snow';
+import Storm from './weather-icons/icons/Storm';
+
 
 
 export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make this function generic so that it can be reused for 5-day daily components
@@ -24,9 +31,21 @@ console.log('current weather', processedCurrentWeatherData)
     return <CloudsDay />
   }
 */
-  return <ClearNight />
+  return  ( 
 
+  <div>  
+    <ClearDay />
+    <CloudsDay />
+    <ClearNight />
+    <ManyClouds/>
+    <Showers />
+    <ShowersNight />
+    <Snow />
+    <Storm />
 
+  <ClearNight />
+  </div>
+  );
 
 };
 
