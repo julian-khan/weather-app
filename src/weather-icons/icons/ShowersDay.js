@@ -1,6 +1,6 @@
 import React from "react";
 
-function Showers() {
+function ShowersDay() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -146,4 +146,4 @@ function Showers() {
   );
 }
 
-export default Showers;
+export default ShowersDay;

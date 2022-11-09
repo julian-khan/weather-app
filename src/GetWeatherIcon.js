@@ -6,50 +6,39 @@ import ManyClouds from './weather-icons/icons/ManyClouds';
 import ShowersDay from './weather-icons/icons/ShowersDay';
 import ShowersNight from './weather-icons/icons/ShowersNight';
 import Snow from './weather-icons/icons/Snow';
-import Storm from './weather-icons/icons/Storm';
-
-
+import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
 export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make this function generic so that it can be reused for 5-day daily components
 
-console.log('current weather', processedCurrentWeatherData)
-
-  
   const currentDateTime = processedCurrentWeatherData.dt;
   const todaySunsetDateTime = processedCurrentWeatherData.sunset;
   const weatherDesc = processedCurrentWeatherData.weather[0].main;
+  const visibility = processedCurrentWeatherData.visibility;
+  const VisibilityCutoff = 8000; // This value for the visibility cutoff is arbitrary.
 
   const isDay = (currentDt, sunsetDt) => {
     //Takes two Unix timestamps as arguments
     return currentDt < sunsetDt? true : false;
   }
 
-
-  
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clear') {
     return <ClearDay />
-  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') {
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds' && visibility > VisibilityCutoff) {
     return <CloudsDay />
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds' && visibility < VisibilityCutoff) {
+    return <ManyClouds />
   } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain') {
     return <ShowersDay />
-  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') { 
-    return <CloudsDay />
-  }
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Snow') { 
+    return <Snow />
+  } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clear') {
+    return <ClearNight />
+  } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') {
+    return <CloudsNight />
+  } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain') {
+    return <ShowersNight />
+  } else return <ErrorNotFound />
 
-
-  <div>  
-    
-    <CloudsDay />
-    <CloudsNight />
-    <ClearNight />
-    <ManyClouds/>
-   
-    <ShowersNight />
-    <Storm />
-    <Snow />
-   
-
-  </div>
 
 
 };
