@@ -22,8 +22,7 @@ class GetCurrentWeatherData extends Component {
     }
 
   render() {
-    //change so that this button is rendered by a UI component, not this fetch component (single responsibility principle)
-    return <button className='refresh-button' onClick={this.GetCurrentWeatherData}>Refresh </button>
+    return 
   };
 
 };
