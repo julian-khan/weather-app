@@ -11,7 +11,6 @@ import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 //UI components
 import AppUIContainer from './AppUIContainer';
 
-
 function App() {
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
 
@@ -29,8 +28,6 @@ function App() {
   const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
   
   return (
-    
-
     <div>
   
       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
@@ -45,10 +42,6 @@ function App() {
       units = {units}
       />
 
-
-   
-
-    
     </div>
   );
 };
