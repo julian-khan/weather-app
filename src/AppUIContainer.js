@@ -3,7 +3,7 @@ import ContactMeHeader from './ContactMeHeader';
 import UILocationSearch from './UILocationSearch';
 import UICurrentWeatherInfo from './UICurrentWeatherInfo';
 
-export default function AppUIContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries}) {
+export default function AppUIContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries, units}) {
   let todayMinAndMax = null;
 
   if (threeHDDailySummaries) { 
@@ -25,7 +25,7 @@ const createUITopSection = () => {
         <div>
           <UILocationSearch setLocationName={setLocationName}/>
         </div>
-        <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} />
+        <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} />
 
       </div>
 

@@ -1,9 +1,13 @@
 import GetWeatherIcon from './GetWeatherIcon';
 
 
-export default function UICurrentWeatherInfo({processedCurrentWeatherData}) {
+export default function UICurrentWeatherInfo({processedCurrentWeatherData, units}) {
 
- 
+const formatUnits = (units) => {
+  let outputStr = null;
+  units === 'metric'? outputStr = ' °C' : outputStr = '°F';
+  return outputStr;
+};
 
   if (processedCurrentWeatherData)  { return (
     <div>
@@ -12,8 +16,11 @@ export default function UICurrentWeatherInfo({processedCurrentWeatherData}) {
       <span> <GetWeatherIcon processedCurrentWeatherData={processedCurrentWeatherData} />
       </span>
     </div>
+    <div>{processedCurrentWeatherData.temp}; </div>
+
+
   <div>
-    <span>Min: </span> <span>Max: </span>
+    <span>Min: {formatUnits(units)}</span> <span>Max: {formatUnits(units)} </span>
   </div>
   </div>
 

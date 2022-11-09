@@ -9,6 +9,7 @@ import Snow from './weather-icons/icons/Snow';
 import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
 export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make this function generic so that it can be reused for 5-day daily components
+//Returns an SVG image as a React Component
 
   const currentDateTime = processedCurrentWeatherData.dt;
   const todaySunsetDateTime = processedCurrentWeatherData.sunset;

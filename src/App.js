@@ -42,6 +42,7 @@ function App() {
       processedCurrentWeatherData={processedCurrentWeatherData} 
       threeHDDailySummaries={threeHDDailySummaries}
       setLocationName = {setLocationName} 
+      units = {units}
       />
 
 
