@@ -1,6 +1,7 @@
 import ClearDay from './weather-icons/icons/ClearDay';
 import ClearNight from './weather-icons/icons/ClearNight';
 import CloudsDay from './weather-icons/icons/CloudsDay';
+import CloudsNight from './weather-icons/icons/CloudsNight';
 import ManyClouds from './weather-icons/icons/ManyClouds';
 import Showers from './weather-icons/icons/Showers';
 import ShowersNight from './weather-icons/icons/ShowersNight';
@@ -36,14 +37,15 @@ console.log('current weather', processedCurrentWeatherData)
   <div>  
     <ClearDay />
     <CloudsDay />
+    <CloudsNight />
     <ClearNight />
     <ManyClouds/>
     <Showers />
     <ShowersNight />
-    <Snow />
     <Storm />
+    <Snow />
+   
 
-  <ClearNight />
   </div>
   );
 
