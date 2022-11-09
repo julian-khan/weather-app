@@ -18,9 +18,10 @@ const createUITopSection = () => {
 
     return (
       <div>
+        <ContactMeHeader /> 
         {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
         <div> 
-          <ContactMeHeader /> 
+          
         </div>
         <div>
           <UILocationSearch setLocationName={setLocationName}/>
