@@ -1,4 +1,5 @@
 import GetWeatherIcon from './GetWeatherIcon';
+import capitaliseString from './functions/capitaliseString'
 
 export default function UICurrentWeatherInfo({processedCurrentWeatherData, units, todayMinAndMax}) {
 
@@ -8,11 +9,6 @@ const formatUnits = (units) => {
   return outputStr;
 };
 
-const capitaliseWeatherDescription = (weatherStr) => {
-  const returnStr = weatherStr.charAt(0).toUpperCase() + weatherStr.slice(1);
-  return returnStr;
-}
-
   if (processedCurrentWeatherData && units)  { 
     return (
     <div className='flex flex-col items-center'>
@@ -21,7 +17,7 @@ const capitaliseWeatherDescription = (weatherStr) => {
       <span> <GetWeatherIcon processedCurrentWeatherData={processedCurrentWeatherData} />
       </span>
     </div>
-    <div className='text-xl'>{capitaliseWeatherDescription(processedCurrentWeatherData.weather[0].description)}, {processedCurrentWeatherData.temp}{formatUnits(units)}</div>
+    <div className='text-xl'>{capitaliseString(processedCurrentWeatherData.weather[0].description)}, {processedCurrentWeatherData.temp}{formatUnits(units)}</div>
 
   <div className='text-sm'>
     <span>Min: {todayMinAndMax[0]} {formatUnits(units)}</span> <span>Max: {todayMinAndMax[0]} {formatUnits(units)} </span>
