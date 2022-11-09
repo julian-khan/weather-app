@@ -12,7 +12,7 @@ const formatUnits = (units) => {
   if (processedCurrentWeatherData)  { return (
     <div>
       <div className='flex justify-center'> 
-      <span className='text-3xl'>{processedCurrentWeatherData.name}</span>
+      <span className='text-3xl px-3'>{processedCurrentWeatherData.name}</span>
       <span> <GetWeatherIcon processedCurrentWeatherData={processedCurrentWeatherData} />
       </span>
     </div>
