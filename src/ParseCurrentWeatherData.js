@@ -1,4 +1,7 @@
+import capitaliseString from './functions/capitaliseString'
+
 import {useState, useEffect} from 'react';
+
 
 export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
   
@@ -21,10 +24,10 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
 
   let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
   const parsedDate = getDateAtLocation(dateOriginalForm); //change these two console.logs so that they update the compiledCurrentWeatherInfo obj with date and time
-  compiledCurrentWeatherInfo['date'] = parsedDate;
+  compiledCurrentWeatherInfo['Date'] = parsedDate;
 
   const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
-  compiledCurrentWeatherInfo['time'] = parsedTime;
+  compiledCurrentWeatherInfo['Time'] = parsedTime;
 
   setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
  

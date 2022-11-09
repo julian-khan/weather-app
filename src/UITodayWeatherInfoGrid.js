@@ -4,7 +4,7 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData}) {
   // that contains another component for each grid item, recursively rendered to contain all required information.
 
   return (
-    <div class="grid grid-cols-3 gap-4 place-items-center mx-8">
+    <div className="grid grid-cols-3 gap-4 place-items-center mx-8">
   <UITodayWeatherGridItem />
 
   <div>test 2</div>
