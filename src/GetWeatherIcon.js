@@ -3,7 +3,7 @@ import ClearNight from './weather-icons/icons/ClearNight';
 import CloudsDay from './weather-icons/icons/CloudsDay';
 import CloudsNight from './weather-icons/icons/CloudsNight';
 import ManyClouds from './weather-icons/icons/ManyClouds';
-import Showers from './weather-icons/icons/Showers';
+import ShowersDay from './weather-icons/icons/ShowersDay';
 import ShowersNight from './weather-icons/icons/ShowersNight';
 import Snow from './weather-icons/icons/Snow';
 import Storm from './weather-icons/icons/Storm';
@@ -25,29 +25,32 @@ console.log('current weather', processedCurrentWeatherData)
   }
 
 
-  /*
+  
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clear') {
-    return <img src={'./weather-icons/icons/' + weatherIconMapping.clearDay} />
+    return <ClearDay />
   } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') {
     return <CloudsDay />
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain') {
+    return <ShowersDay />
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') { 
+    return <CloudsDay />
   }
-*/
-  return  ( 
+
 
   <div>  
-    <ClearDay />
+    
     <CloudsDay />
     <CloudsNight />
     <ClearNight />
     <ManyClouds/>
-    <Showers />
+   
     <ShowersNight />
     <Storm />
     <Snow />
    
 
   </div>
-  );
+
 
 };
 
