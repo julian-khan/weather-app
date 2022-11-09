@@ -1,5 +1,3 @@
-import capitaliseString from './functions/capitaliseString'
-
 import {useState, useEffect} from 'react';
 
 
@@ -24,10 +22,10 @@ const handleCurrentWeatherCompiling = (currentWeatherData) => {
 
   let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
   const parsedDate = getDateAtLocation(dateOriginalForm); //change these two console.logs so that they update the compiledCurrentWeatherInfo obj with date and time
-  compiledCurrentWeatherInfo['Date'] = parsedDate;
+  compiledCurrentWeatherInfo['date'] = parsedDate;
 
   const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
-  compiledCurrentWeatherInfo['Time'] = parsedTime;
+  compiledCurrentWeatherInfo['time'] = parsedTime;
 
   setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
  

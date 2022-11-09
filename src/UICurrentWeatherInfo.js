@@ -9,7 +9,7 @@ const formatUnits = (units) => {
   return outputStr;
 };
 
-  if (processedCurrentWeatherData && units)  { 
+  if (processedCurrentWeatherData && units && todayMinAndMax)  { 
     return (
     <div className='flex flex-col items-center'>
       <div className='flex'> 
@@ -23,7 +23,6 @@ const formatUnits = (units) => {
     <span>Min: {todayMinAndMax[0]} {formatUnits(units)}</span> <span>Max: {todayMinAndMax[0]} {formatUnits(units)} </span>
   </div>
   </div>
-
   );
     };
   }
