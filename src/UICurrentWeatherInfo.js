@@ -1,6 +1,5 @@
 import GetWeatherIcon from './GetWeatherIcon';
 
-
 export default function UICurrentWeatherInfo({processedCurrentWeatherData, units, todayMinAndMax}) {
 
 const formatUnits = (units) => {
@@ -24,7 +23,6 @@ const capitaliseWeatherDescription = (weatherStr) => {
     </div>
     <div className='text-xl'>{capitaliseWeatherDescription(processedCurrentWeatherData.weather[0].description)}, {processedCurrentWeatherData.temp}{formatUnits(units)}</div>
 
-
   <div className='text-sm'>
     <span>Min: {todayMinAndMax[0]} {formatUnits(units)}</span> <span>Max: {todayMinAndMax[0]} {formatUnits(units)} </span>
   </div>
@@ -32,5 +30,4 @@ const capitaliseWeatherDescription = (weatherStr) => {
 
   );
     };
-    
   }
