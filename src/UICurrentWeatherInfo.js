@@ -1,13 +1,10 @@
 import GetWeatherIcon from './GetWeatherIcon';
 import capitaliseString from './functions/capitaliseString'
+import formatUnits from './functions/formatUnits';
 
 export default function UICurrentWeatherInfo({processedCurrentWeatherData, units, todayMinAndMax}) {
 
-const formatUnits = (units) => {
-  let outputStr = null;
-  units === 'metric'? outputStr = ' °C' : outputStr = '°F';
-  return outputStr;
-};
+
 
   if (processedCurrentWeatherData && units && todayMinAndMax)  { 
     return (
