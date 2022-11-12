@@ -13,21 +13,46 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
 
   processedCurrentWeatherData? currentDateFormatted = formatDate("Saturday, November 12, 2022") : currentDateFormatted = null;
 
-  return
-
-  
-  /*
+  if (processedCurrentWeatherData && units) { 
   return (
    <div className="grid grid-cols-3 gap-4 place-items-center mx-8">
-   processedCurrentWeatherData.sunrise? <UITodayWeatherGridItem propName={null} propValue={processedCurrentWeatherData.sunrise}/> : {null};
+   <div className="currentDateAndTime"> 
+    <div>
+      {currentDateFormatted[0]},
+    </div>
+    <div>
+      {currentDateFormatted[1]}
+    </div>
+    <div>
+      {processedCurrentWeatherData.time}
+    </div>
+   </div>
+    
+  <div>
+    <div>
+      Sunrise
+    </div>
+    <div>
+      {processedCurrentWeatherData.sunriseFormatted}
+    </div>
+  </div>
 
-  <div>test 2</div>
+  <div>
+    <div>
+      Sunset
+    </div>
+    <div>
+      {processedCurrentWeatherData.sunsetFormatted}
+    </div>
+  </div>
+
+
   <div>test 3 </div>
   <div>test 4 </div>
 </div>
   );
-*/
-  
+
+  }
 };
 
 
