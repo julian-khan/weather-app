@@ -27,24 +27,10 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
       {processedCurrentWeatherData.time}
     </div>
    </div>
-    
-  <div>
-    <div>
-      Sunrise
-    </div>
-    <div>
-      {processedCurrentWeatherData.sunriseFormatted}
-    </div>
-  </div>
-
-  <div>
-    <div>
-      Sunset
-    </div>
-    <div>
-      {processedCurrentWeatherData.sunsetFormatted}
-    </div>
-  </div>
+  
+  <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
+  <UITodayWeatherGridItem propName='Sunset' propValue= {processedCurrentWeatherData.sunsetFormatted} />
+  <UITodayWeatherGridItem propName='Visibility' propValue= {processedCurrentWeatherData.visibility/1000 + ' km'} />
 
 
   <div>test 3 </div>
