@@ -25,13 +25,13 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
       if (compiledCurrentWeatherInfo.hasOwnProperty('sunrise')) {
         const sunriseDate = new Date(compiledCurrentWeatherInfo.sunrise * 1000);
         const parsedSunriseTime = getTimeAtTargetLocation(sunriseDate);
-        compiledCurrentWeatherInfo.sunrise = parsedSunriseTime;
+        compiledCurrentWeatherInfo.sunriseFormatted = parsedSunriseTime;
       }
 
       if (compiledCurrentWeatherInfo.hasOwnProperty('sunset')) {
         const sunsetDate = new Date(compiledCurrentWeatherInfo.sunset * 1000);
         const parsedSunsetTime = getTimeAtTargetLocation(sunsetDate);
-        compiledCurrentWeatherInfo.sunset = parsedSunsetTime;
+        compiledCurrentWeatherInfo.sunsetFormatted = parsedSunsetTime;
       }
 
     setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
