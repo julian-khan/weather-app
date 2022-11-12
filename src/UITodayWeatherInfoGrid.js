@@ -1,4 +1,5 @@
 import UITodayWeatherGridItem from "./UITodayWeatherGridItem";
+import formatUnits from "./functions/formatUnits";
 
 export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, units}) { //make this component a generic css grid container
   // that contains another component for each grid item, recursively rendered to contain all required information.
@@ -33,7 +34,7 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
   <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
   <UITodayWeatherGridItem propName='Sunset' propValue= {processedCurrentWeatherData.sunsetFormatted} />
   <UITodayWeatherGridItem propName='Visibility' propValue= {processedCurrentWeatherData.visibility/1000 + ' km'} />
-  <UITodayWeatherGridItem propName='Feels like' propValue= {processedCurrentWeatherData.feels_like}  />
+  <UITodayWeatherGridItem propName='Feels like' propValue= {processedCurrentWeatherData.feels_like + formatUnits(units)}  />
 
 
   <div>test 3 </div>
