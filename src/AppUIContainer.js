@@ -26,7 +26,7 @@ const createUITopSection = () => {
           <UILocationSearch setLocationName={setLocationName}/>
         </div>
         <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
-        <UITodayWeatherInfoGrid />
+        <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
 
       </div>
 

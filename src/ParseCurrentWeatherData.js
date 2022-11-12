@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import getTimeAtTargetLocation from './functions/getTimeAtTargetLocation';
 
 
 export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
@@ -8,28 +9,23 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
     return dateObj.toLocaleDateString("en-US", options); //change to "en-GB"
     }
 
-  const getTimeAtTargetLocation = (dateObj) => { //rename to indicate that the function is setting the date
-    const options = {hour12: 'true', hour: 'numeric', minute: 'numeric'}
-    return dateObj.toLocaleString('en-GB', options)    
+  const handleCurrentWeatherCompiling = (currentWeatherData) => {
+  /* This function is passed the raw current weather data and modifies the compiledCurrentWeatherInfo
+    object contained within its function scope, to be passed as a prop to UI elements. */
+
+    let compiledCurrentWeatherInfo = {};
+    compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
+
+    let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
+    const parsedDate = getDateAtLocation(dateOriginalForm); //change these two console.logs so that they update the compiledCurrentWeatherInfo obj with date and time
+    compiledCurrentWeatherInfo['date'] = parsedDate;
+
+    const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
+    compiledCurrentWeatherInfo['time'] = parsedTime;
+
+    setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
+  
   }
-
-const handleCurrentWeatherCompiling = (currentWeatherData) => {
-/* This function is passed the raw current weather data and modifies the compiledCurrentWeatherInfo
-  object contained within its function scope, to be passed as a prop to UI elements. */
-
-  let compiledCurrentWeatherInfo = {};
-  compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
-
-  let dateOriginalForm = new Date(currentWeatherData.dt * 1000);
-  const parsedDate = getDateAtLocation(dateOriginalForm); //change these two console.logs so that they update the compiledCurrentWeatherInfo obj with date and time
-  compiledCurrentWeatherInfo['date'] = parsedDate;
-
-  const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
-  compiledCurrentWeatherInfo['time'] = parsedTime;
-
-  setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
- 
-}
 
   const compileCurrentWeatherInfo = (currentWeatherObj, compiledCurrentWeatherInfo) => {
     // This function will recursively iterate through the current weather prop (depth-first
