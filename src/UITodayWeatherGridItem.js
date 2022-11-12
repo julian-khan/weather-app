@@ -1,16 +1,13 @@
 
-export default function UITodayWeatherGridItem (infoProp) { //make this component a generic css grid container
-  // that contains another component for each grid item, recursively rendered to contain all required information.
-
-
+export default function UITodayWeatherGridItem ({propName, propValue}) { //make this component a flexbox container with the name above and value below
 
   return (
     <div className="className='flex flex-col items-center'">
       <div>
-        property name
+        {propName}
       </div>
       <div>
-        property value
+        {propValue}
       </div>
 
     </div>
