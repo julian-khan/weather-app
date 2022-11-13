@@ -12,14 +12,12 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
     return separatedDateArr;
   }
 
-  
-
   processedCurrentWeatherData? currentDateFormatted = formatDate("Saturday, November 12, 2022") : currentDateFormatted = null;
 
   if (processedCurrentWeatherData && units) { 
   return (
-   <div className=" grid grid-cols-3 gap-4 place-items-center mx-8">
-   <div className="currentDateAndTime rounded-md border-zinc-400 border-4"> 
+   <div className="grid grid-cols-3 gap-4 place-items-center mx-8">
+   <div className="currentDateAndTime rounded-md border-zinc-400 border-4 w-25"> 
     <div>
       {currentDateFormatted[0]},
     </div>
