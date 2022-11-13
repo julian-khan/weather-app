@@ -28,7 +28,7 @@ export default function DailySummary5D({daySummary, units}) {
   };
 
   return (
-    <div>
+    <div className='flex place-content-evenly rounded-md border-zinc-400 border-4 w-25 my-3 py-1'>
       <div>
         {daySummary.dayOfWeek}
       </div>
