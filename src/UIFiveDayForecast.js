@@ -1,6 +1,6 @@
 import DailySummary5D from "./DailySummary5D";
 
-export default function UIFiveDayForecast({threeHDDailySummaries}) {
+export default function UIFiveDayForecast({threeHDDailySummaries, units}) {
 
   const testDayData = {
     "dayNumber": 2,
@@ -15,7 +15,7 @@ export default function UIFiveDayForecast({threeHDDailySummaries}) {
 
   return (
     <div>
-      <DailySummary5D daySummary={testDayData} />
+      <DailySummary5D daySummary={testDayData} units={units}/>
  
     </div>
   );

@@ -30,7 +30,7 @@ const createUITopSection = () => {
         <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
 
 
-        <UIFiveDayForecast threeHDDailySummaries={threeHDDailySummaries} />
+        <UIFiveDayForecast threeHDDailySummaries={threeHDDailySummaries} units={units}/>
 
       </div>
 

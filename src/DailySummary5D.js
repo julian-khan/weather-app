@@ -5,7 +5,7 @@ import ShowersDay from './weather-icons/icons/ShowersDay';
 import Snow from './weather-icons/icons/Snow';
 import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
-export default function DailySummary5D({daySummary}) {
+export default function DailySummary5D({daySummary, units}) {
 
   const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;
@@ -34,10 +34,10 @@ export default function DailySummary5D({daySummary}) {
        {getWeatherIcon(daySummary)}
       </div>
       <div>
-        min temp
+        {daySummary.MinAndMaxTemp[0]}
       </div>
       <div>
-        max temp
+      {daySummary.MinAndMaxTemp[1]}
       </div>
     </div>
   );
