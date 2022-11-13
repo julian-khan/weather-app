@@ -9,7 +9,7 @@ export default function DailySummary5D({daySummary}) {
 
   const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;
-    const visibility = daySummary.visibility;
+    const visibility = daySummary.averageVisibility;
     const VisibilityCutoff = 8000; // This value for the visibility cutoff is arbitrary.
 
     if (weatherDesc === 'Clear') {
