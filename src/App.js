@@ -9,7 +9,7 @@ import Parse3H5D from './Parse3H5D';
 import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 
 //UI components
-import AppUIContainer from './AppUIContainer';
+import UIAppContainer from './UIAppContainer';
 
 function App() {
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
@@ -35,7 +35,7 @@ function App() {
       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries}/>
 
-      <AppUIContainer 
+      <UIAppContainer 
       processedCurrentWeatherData={processedCurrentWeatherData} 
       threeHDDailySummaries={threeHDDailySummaries}
       setLocationName = {setLocationName} 

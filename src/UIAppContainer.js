@@ -5,7 +5,7 @@ import UICurrentWeatherInfo from './UICurrentWeatherInfo';
 import UITodayWeatherInfoGrid from './UITodayWeatherInfoGrid'
 import UIFiveDayForecast from './UIFiveDayForecast';
 
-export default function AppUIContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries, units}) {
+export default function UIAppContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries, units}) {
   let todayMinAndMax = null;
 
   if (threeHDDailySummaries) { 
