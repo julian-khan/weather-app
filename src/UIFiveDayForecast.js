@@ -16,12 +16,11 @@ export default function UIFiveDayForecast({threeHDDailySummaries, units}) {
   //    <DailySummary5D daySummary={testDayData} units={units}/>
 
 
- 
 
   return (
     <div>
       {threeHDDailySummaries.map((daySummary, index) => {
-        return <DailySummary5D key={index} daySummary={daySummary} units={units} />
+        if(index>0){ return <DailySummary5D key={index} daySummary={daySummary} units={units} /> }
       })}
    
     </div>
