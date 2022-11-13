@@ -1480,7 +1480,7 @@ export function separate3H5DDataToDays(data) {
     let dailyData = [];
     let dateString = null;
 
-    for (let i = 0; i <= data.list.length - 1; i++) { //The 7 limit for j is because 3 hours * 8 = 24 hours (0-indexing hence 7 is used
+    for (let i = 0; i <= data.list.length - 1; i++) { 
         if (data.list[i].dt_txt.includes(dateString) 
             && i === data.list.length - 1
             && dailyData.length > 1) {
