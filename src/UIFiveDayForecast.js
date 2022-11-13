@@ -13,10 +13,17 @@ export default function UIFiveDayForecast({threeHDDailySummaries, units}) {
     "visibility": 10000, //visibility not in object by default
   }
 
+  //    <DailySummary5D daySummary={testDayData} units={units}/>
+
+
+ 
+
   return (
     <div>
-      <DailySummary5D daySummary={testDayData} units={units}/>
- 
+      {threeHDDailySummaries.map((daySummary, index) => {
+        return <DailySummary5D key={index} daySummary={daySummary} units={units} />
+      })}
+   
     </div>
   );
     };

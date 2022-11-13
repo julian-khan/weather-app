@@ -12,29 +12,27 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
     todayMinAndMax = threeHDDailySummaries[0].MinAndMaxTemp
 }
 
-const createUITopSection = () => {
-  return <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />;
-}
+  const createUITopSection = () => {
+    return <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />;
+  }
 
-    return (
-      <div>
-        <ContactMeHeader /> 
-        {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
-        <div> 
-          
-        </div>
+  if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
+      return (
         <div>
-          <UILocationSearch setLocationName={setLocationName}/>
+          <ContactMeHeader /> 
+          {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
+          <div> 
+            
+          </div>
+          <div>
+            <UILocationSearch setLocationName={setLocationName}/>
+          </div>
+          <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
+          <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
+
+
+          <UIFiveDayForecast threeHDDailySummaries={threeHDDailySummaries} units={units}/>
         </div>
-        <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
-        <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
-
-
-        <UIFiveDayForecast threeHDDailySummaries={threeHDDailySummaries} units={units}/>
-
-      </div>
-
-      
-    );
-
-    };
+      );
+  }
+};
