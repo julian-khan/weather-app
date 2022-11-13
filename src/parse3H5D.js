@@ -21,6 +21,10 @@ function getSummaries3H5D(separated3H5D) {
     const MinAndMaxTemp = dataHandling.getMinAndMaxTemp(dailyTempArray);
     dayListOutput.MinAndMaxTemp = MinAndMaxTemp;
 
+    const date = new Date(dayForData[0].dt * 1000);
+    const dayOfWeek = new Intl.DateTimeFormat('en-GB', { weekday: 'long'}).format(date);
+    dayListOutput.dayOfWeek = dayOfWeek;
+    
     summarisedDay3H.push(dayListOutput);
 }
 return summarisedDay3H;
