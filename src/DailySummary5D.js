@@ -28,11 +28,11 @@ export default function DailySummary5D({daySummary, units}) {
   };
 
   return (
-    <div className='flex place-content-evenly rounded-md border-zinc-400 border-4 w-25 my-3 py-1'>
-      <div>
+    <div className='flex justify-between items-center rounded-md border-zinc-400 border-4  my-3 mx-20 py-1 px-3'>
+      <div className='w-36 border-zinc-400 border-4'>
         {daySummary.dayOfWeek}
       </div>
-      <div>
+      <div className=' border-zinc-400 border-4 w-20 justify-self-start'>
        {getWeatherIcon(daySummary)}
       </div>
       <div>
