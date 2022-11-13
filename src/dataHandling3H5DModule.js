@@ -1533,3 +1533,11 @@ export function getMinAndMaxTemp(Arr) {
     return [Math.min(...Arr), Math.max(...Arr)];
 };
 
+export function calculateAvVisibility(dayForData) { 
+    let summedVisibility = 0;
+    for (let i=0; i<dayForData.length; i++) {
+      summedVisibility += dayForData[i].visibility;
+    }
+    return summedVisibility/dayForData.length;
+  }
+

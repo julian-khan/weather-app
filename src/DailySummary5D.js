@@ -7,7 +7,7 @@ import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
 export default function DailySummary5D({daySummary}) {
 
-  const GetWeatherIcon = (daySummary) => {
+  const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;
     const visibility = daySummary.visibility;
     const VisibilityCutoff = 8000; // This value for the visibility cutoff is arbitrary.
@@ -31,7 +31,7 @@ export default function DailySummary5D({daySummary}) {
         {daySummary.dayOfWeek}
       </div>
       <div>
-       weathericon
+       {getWeatherIcon(daySummary)}
       </div>
       <div>
         min temp
