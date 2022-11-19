@@ -37,10 +37,10 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
        {getWeatherIcon(daySummary)}
       </div>
       <div className=' border-zinc-400 border-4'>
-        {daySummary.MinAndMaxTemp[0]} {formatUnits(units)}
+        Min: {daySummary.MinAndMaxTemp[0]} {formatUnits(units)}
       </div>
       <div className=' border-zinc-400 border-4'>
-      {daySummary.MinAndMaxTemp[1]} {formatUnits(units)}
+      Max: {daySummary.MinAndMaxTemp[1]} {formatUnits(units)}
       </div>
     </div>
   );
