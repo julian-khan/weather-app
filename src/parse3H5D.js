@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import * as dataHandling from './dataHandling3H5DModule'
+import * as dataHandling from './functions/dataHandling3H5DModule'
 
 export default function Parse3H5D(props) {
 //will take the original full 3h5d json object as a prop
