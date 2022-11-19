@@ -18,7 +18,7 @@ export default function UIFiveDayForecast({threeHDDailySummaries, units}) {
 
 
   return (
-    <div>
+    <div className="my-8 mx-20">
       {threeHDDailySummaries.map((daySummary, index) => {
         if(index>0){ return <DailySummary5D key={index} daySummary={daySummary} units={units} /> }
       })}
