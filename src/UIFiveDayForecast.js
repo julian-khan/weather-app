@@ -13,12 +13,8 @@ export default function UIFiveDayForecast({threeHDDailySummaries, units}) {
     "visibility": 10000, //visibility not in object by default
   }
 
-  //    <DailySummary5D daySummary={testDayData} units={units}/>
-
-
-
   return (
-    <div className="grid gap-4 my-8 mx-20 auto-rows-fr">
+    <div className="grid gap-4 my-8 mx-20">
       {threeHDDailySummaries.map((daySummary, index) => {
         if(index>0){ return <DailySummary5D key={index} daySummary={daySummary} units={units} /> }
       })}
