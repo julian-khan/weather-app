@@ -4,7 +4,7 @@ import UILocationSearch from './UILocationSearch';
 import UICurrentWeatherInfo from './UICurrentWeatherInfo';
 import UISectionHeading from './UISectionHeading';
 import UITodayWeatherInfoGrid from './UITodayWeatherInfoGrid'
-import UIFiveDayForecast from './UIFiveDayForecast';
+import UIFiveDayForecastGrid from './UIFiveDayForecastGrid';
 
 export default function UIAppContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries, units}) {
   let todayMinAndMax = null;
@@ -32,7 +32,7 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
           <UISectionHeading headingName={'Currently:'} />
           <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
           <UISectionHeading headingName={'Five-day forecast:'} />
-          <UIFiveDayForecast threeHDDailySummaries={threeHDDailySummaries} units={units}/>
+          <UIFiveDayForecastGrid threeHDDailySummaries={threeHDDailySummaries} units={units}/>
         </div>
       );
   }
