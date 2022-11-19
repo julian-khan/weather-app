@@ -11,14 +11,12 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
     separatedDateArr.pop();
     return separatedDateArr;
   }
-
   processedCurrentWeatherData? currentDateFormatted = formatDate("Saturday, November 12, 2022") : currentDateFormatted = null;
 
   if (processedCurrentWeatherData && units) { 
   return (
    <div className="grid grid-cols-3 gap-4 my-10 mx-20 auto-rows-fr">
    
-
    <UITodayWeatherGridItem propName={currentDateFormatted[0] + ', ' + currentDateFormatted[1]} propValue= {processedCurrentWeatherData.time } />
     <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
     <UITodayWeatherGridItem propName='Sunset' propValue= {processedCurrentWeatherData.sunsetFormatted} />
