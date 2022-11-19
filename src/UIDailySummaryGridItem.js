@@ -7,7 +7,7 @@ import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
 import formatUnits from "./functions/formatUnits";
 
-export default function DailySummaryGridItem({daySummary, units}) {
+export default function UIDailySummaryGridItem({daySummary, units}) {
 
   const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;
@@ -28,7 +28,7 @@ export default function DailySummaryGridItem({daySummary, units}) {
   };
 
   return (
-    <div className='flex justify-between rounded-md border-zinc-400 border-4  my-3 py-1 px-3'>
+    <div className='flex justify-between rounded-md border-zinc-400 border-4 my-2 py-1 px-3'>
       <div className='w-36 border-zinc-400 border-4'>
         {daySummary.dayOfWeek}
       </div>
