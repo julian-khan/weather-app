@@ -6,7 +6,7 @@ export default function ContactMeHeader() {
  
 
   return (
-    <div className="flex flex-row items-center justify-between mb-8 mx-20 ">
+    <div className="flex flex-row items-center justify-between px-20 ">
       <span className = 'text-2xl tracking-tight text-gray-900 sm:text-3xl md:text-4xl'>Contact me</span>
 
       <span className="flex flex-row items-center "> 
