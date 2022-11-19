@@ -18,7 +18,7 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
   return (
    <div className="grid grid-cols-3 gap-4 my-10 mx-20 auto-rows-fr">
    <div className="currentDateAndTime rounded-md flex flex-col items-center border-zinc-400 border-4"> 
-    <div>
+    <div className="text-lg">
       {currentDateFormatted[0]},
     </div>
     <div>
