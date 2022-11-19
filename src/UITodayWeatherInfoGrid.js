@@ -15,14 +15,14 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
 
   if (processedCurrentWeatherData && units) { 
   return (
-   <div className="grid grid-cols-3 gap-4 my-10 mx-20 auto-rows-fr">
+    <div className="grid grid-cols-3 gap-4 my-10 mx-20 auto-rows-fr">
    
-   <UITodayWeatherGridItem propName={currentDateFormatted[0] + ', ' + currentDateFormatted[1]} propValue= {processedCurrentWeatherData.time } />
+    <UITodayWeatherGridItem propName={currentDateFormatted[0] + ', ' + currentDateFormatted[1]} propValue= {processedCurrentWeatherData.time } />
     <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
     <UITodayWeatherGridItem propName='Sunset' propValue= {processedCurrentWeatherData.sunsetFormatted} />
     <UITodayWeatherGridItem propName='Visibility' propValue= {processedCurrentWeatherData.visibility/1000 + ' km'} />
     <UITodayWeatherGridItem propName='Feels like' propValue= {processedCurrentWeatherData.feels_like + formatUnits(units)} />
-    <UITodayWeatherGridItem propName='Humdiity' propValue= {processedCurrentWeatherData.humidity + '%'}  />
+    <UITodayWeatherGridItem propName='Humidity' propValue= {processedCurrentWeatherData.humidity + '%'}  />
   </div>
   );
 

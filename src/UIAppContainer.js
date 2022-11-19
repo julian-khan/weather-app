@@ -28,6 +28,11 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
             <UILocationSearch setLocationName={setLocationName}/>
           </div>
           <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
+          <div className='sm:text-center lg:text-left -mb-14'>
+            <h2 className="text-center text-xl tracking-tight text-gray-900 sm:text-xl md:text-3xl">
+              <span className="block py-8 ">Currently:</span>
+            </h2>
+          </div>    
           <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
 
 
