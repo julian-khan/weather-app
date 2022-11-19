@@ -34,6 +34,14 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
         compiledCurrentWeatherInfo.sunsetFormatted = parsedSunsetTime;
       }
 
+      if (compiledCurrentWeatherInfo.hasOwnProperty('temp')) {
+        compiledCurrentWeatherInfo.temp = compiledCurrentWeatherInfo.temp.toFixed(1);
+      }
+
+      if (compiledCurrentWeatherInfo.hasOwnProperty('feels_like')) {
+        compiledCurrentWeatherInfo.feels_like = compiledCurrentWeatherInfo.feels_like.toFixed(1);
+      }
+
     setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);
   }
 
