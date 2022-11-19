@@ -15,7 +15,7 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
 
   if (processedCurrentWeatherData && units) { 
   return (
-    <div className="grid grid-cols-3 gap-4 my-10 mx-20 auto-rows-fr">
+    <div className="grid grid-cols-3 gap-4 my-8 mx-20 auto-rows-fr">
    
     <UITodayWeatherGridItem propName={currentDateFormatted[0] + ', ' + currentDateFormatted[1]} propValue= {processedCurrentWeatherData.time } />
     <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
