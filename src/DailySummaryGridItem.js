@@ -7,7 +7,7 @@ import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 
 import formatUnits from "./functions/formatUnits";
 
-export default function DailySummary5D({daySummary, units}) {
+export default function DailySummaryGridItem({daySummary, units}) {
 
   const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;

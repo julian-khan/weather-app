@@ -1,4 +1,4 @@
-import DailySummary5D from "./DailySummary5D";
+import DailySummaryGridItem from "./DailySummaryGridItem";
 
 export default function UIFiveDayForecastGrid({threeHDDailySummaries, units}) {
 
@@ -16,7 +16,7 @@ export default function UIFiveDayForecastGrid({threeHDDailySummaries, units}) {
   return (
     <div className="grid gap-4 my-8 mx-20">
       {threeHDDailySummaries.map((daySummary, index) => {
-        if(index>0){ return <DailySummary5D key={index} daySummary={daySummary} units={units} /> }
+        if(index>0){ return <DailySummaryGridItem key={index} daySummary={daySummary} units={units} /> }
       })}
    
     </div>
