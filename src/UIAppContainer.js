@@ -1,5 +1,5 @@
 import UITopSection from './UITopSection';
-import ContactMeHeader from './ContactMeHeader';
+import UIContactMeHeader from './UIContactMeHeader';
 import UILocationSearch from './UILocationSearch';
 import UICurrentWeatherInfo from './UICurrentWeatherInfo';
 import UITodayWeatherInfoGrid from './UITodayWeatherInfoGrid'
@@ -19,7 +19,7 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
   if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
       return (
         <div>
-          <ContactMeHeader /> 
+          <UIContactMeHeader /> 
           {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
           <div> 
             

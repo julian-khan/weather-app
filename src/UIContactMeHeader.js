@@ -2,7 +2,7 @@
 import mail from './ContactMeHeader-icons/mail.svg';
 import linkedinicon from './ContactMeHeader-icons/linkedinicon.png';
 
-export default function ContactMeHeader() {
+export default function UIContactMeHeader() {
  
 
   return (
