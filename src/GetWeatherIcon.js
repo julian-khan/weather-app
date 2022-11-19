@@ -28,7 +28,7 @@ export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make 
     return <CloudsDay />
   } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds' && visibility < VisibilityCutoff) {
     return <ManyClouds />
-  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain') {
+  } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain' || weatherDesc === 'Drizzle') {
     return <ShowersDay />
   } else if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Snow') { 
     return <Snow />
