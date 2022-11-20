@@ -28,18 +28,18 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
   };
 
   return (
-    <div className='flex justify-between rounded-md border-zinc-400 border-4 my-2 py-1 px-3'>
+    <div className='flex justify-between rounded-md border-zinc-400 border-4 my-1 py-1 px-3'>
 
-      <div className='w-36 border-zinc-400 border-4'>
+      <div className='w-36'>
         {daySummary.dayOfWeek}
       </div>
-      <div className=' border-zinc-400 border-4'>
+      <div>
        {getWeatherIcon(daySummary)}
       </div>
-      <div className=' border-zinc-400 border-4'>
+      <div>
         Min: {daySummary.MinAndMaxTemp[0]} {formatUnits(units)}
       </div>
-      <div className=' border-zinc-400 border-4'>
+      <div>
       Max: {daySummary.MinAndMaxTemp[1]} {formatUnits(units)}
       </div>
     </div>
