@@ -12,6 +12,8 @@ import ParseCurrentWeatherData from './ParseCurrentWeatherData';
 import UIAppContainer from './UIAppContainer';
 
 function App() {
+  const [viewMode, setViewMode] = useState('light')
+  
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
 
   const [locationName, setLocationName] = useState('Perth');
@@ -26,9 +28,10 @@ function App() {
 
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
   const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
+
   
   return (
-    <div>
+    <div className={viewMode}>
   
       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
       <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} />
