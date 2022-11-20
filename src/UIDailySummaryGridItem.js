@@ -20,7 +20,7 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
       return <CloudsDay />
     } else if (weatherDesc === 'Clouds' && visibility < VisibilityCutoff) {
       return <ManyClouds />
-    } else if (weatherDesc === 'Rain') {
+    } else if (weatherDesc === 'Rain' || weatherDesc === 'Drizzle') {
       return <ShowersDay />
     } else if (weatherDesc === 'Snow') { 
       return <Snow />
