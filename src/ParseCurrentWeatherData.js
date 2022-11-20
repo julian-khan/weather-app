@@ -35,11 +35,11 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
       }
 
       if (compiledCurrentWeatherInfo.hasOwnProperty('temp')) {
-        compiledCurrentWeatherInfo.temp = compiledCurrentWeatherInfo.temp.toFixed(1);
+        compiledCurrentWeatherInfo.temp = compiledCurrentWeatherInfo.temp.toFixed(0);
       }
 
       if (compiledCurrentWeatherInfo.hasOwnProperty('feels_like')) {
-        compiledCurrentWeatherInfo.feels_like = compiledCurrentWeatherInfo.feels_like.toFixed(1);
+        compiledCurrentWeatherInfo.feels_like = compiledCurrentWeatherInfo.feels_like.toFixed(0);
       }
 
     setProcessedCurrentWeatherData(compiledCurrentWeatherInfo);

@@ -1530,7 +1530,7 @@ export function getDailyTempArray(data) {
 };
 
 export function getMinAndMaxTemp(Arr) {
-    return [Math.min(...Arr).toFixed(1), Math.max(...Arr).toFixed(1)];
+    return [Math.min(...Arr).toFixed(0), Math.max(...Arr).toFixed(0)];
 };
 
 export function calculateAvVisibility(dayForData) { 
