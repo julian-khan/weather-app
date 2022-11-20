@@ -15,7 +15,8 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
 
   if (processedCurrentWeatherData && units) { 
   return (
-    <div className="grid grid-cols-3 gap-4 my-8 mx-20 auto-rows-fr">
+    <div className="w-auto mx-auto ">
+    <div className="grid grid-cols-3 gap-4 my-8 mx-auto auto-rows-fr max-w-lg">
    
     <UITodayWeatherGridItem propName={currentDateFormatted[0] + ', ' + currentDateFormatted[1]} propValue= {processedCurrentWeatherData.time } />
     <UITodayWeatherGridItem propName='Sunrise' propValue= {processedCurrentWeatherData.sunriseFormatted} />
@@ -23,6 +24,7 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
     <UITodayWeatherGridItem propName='Visibility' propValue= {processedCurrentWeatherData.visibility/1000 + ' km'} />
     <UITodayWeatherGridItem propName='Feels like' propValue= {processedCurrentWeatherData.feels_like + formatUnits(units)} />
     <UITodayWeatherGridItem propName='Humidity' propValue= {processedCurrentWeatherData.humidity + '%'}  />
+  </div>
   </div>
   );
 
