@@ -9,7 +9,7 @@ export default function UICurrentWeatherInfo({processedCurrentWeatherData, units
   if (processedCurrentWeatherData && units && todayMinAndMax)  { 
     return (
     <div className='flex flex-col items-center my-8'>
-      <div className='flex'> 
+      <div className='flex items-center'> 
       <span className='text-xl sm:text-4xl md:text-5xl px-3'>{processedCurrentWeatherData.name}</span>
       <span> <GetWeatherIcon processedCurrentWeatherData={processedCurrentWeatherData} />
       </span>
