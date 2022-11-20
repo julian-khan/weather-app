@@ -36,7 +36,7 @@ export default function GetWeatherIcon ({processedCurrentWeatherData}) { //make 
     return <ClearNight />
   } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Clouds') {
     return <CloudsNight />
-  } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain') {
+  } else if (!isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === 'Rain' || weatherDesc === 'Drizzle') {
     return <ShowersNight />
   } else return <ErrorNotFound />
 
