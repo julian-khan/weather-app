@@ -7,7 +7,7 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return dateObj.toLocaleDateString("en-US", options); //change to "en-GB"
     }
-
+    
   const handleCurrentWeatherCompiling = (currentWeatherData) => {
   /* This function is passed the raw current weather data and modifies the compiledCurrentWeatherInfo
     object contained within its function scope, to be passed as a prop to UI elements. */

@@ -6,7 +6,7 @@ export default function UITopSection({processedCurrentWeatherData, todayMinAndMa
     return (
       <div className='sm:text-center lg:text-left'>
           <h1 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-            <span className="block py-8 ">A weather app</span>
+            <span className="block text-slate-900 dark:text-white py-8 ">A weather app</span>
           </h1>
       </div>      
     );

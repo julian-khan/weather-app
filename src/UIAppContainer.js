@@ -19,7 +19,7 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
 
   if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
       return (
-        <div className='min-w-[600px]'>
+        <div className='min-w-[600px] bg-white dark:bg-slate-800'>
           <UIContactMeHeader /> 
           {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
           <div> 
