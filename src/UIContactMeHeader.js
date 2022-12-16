@@ -2,6 +2,7 @@
 import mail from './ContactMeHeader-icons/mail.svg';
 import SettingsIcon from './weather-icons/icons/SettingsIcon';
 import linkedinicon from './ContactMeHeader-icons/linkedinicon.png';
+import UISettingsDropdown from './UISettingsDropdown';
 
 export default function UIContactMeHeader() {
  
@@ -15,9 +16,7 @@ export default function UIContactMeHeader() {
             <img src={linkedinicon} className='w-9' /> 
           </a>
         </li>
-        <li className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-320"> 
-          <SettingsIcon />
-        </li>
+        <UISettingsDropdown />
       </ul>
     </nav >   
   );
