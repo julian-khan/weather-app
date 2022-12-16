@@ -23,7 +23,6 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
         <div className='min-w-[600px] bg-white dark:bg-slate-800'>
           <UIContactMeHeader /> 
           <div className='flex justify-end'> 
-            <SettingsIcon />
           </div>
           {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
           <div className='flex items-center'>
