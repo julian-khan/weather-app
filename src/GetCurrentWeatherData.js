@@ -9,14 +9,14 @@ class GetCurrentWeatherData extends Component {
   GetCurrentWeatherData() { 
     //Need to secure API key with backend when implement it
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + this.props.latitude + '&lon=' + this.props.longitude + '&appid=' + 
-    'b1ab53cd687ca486f76e739d8fc1a32b' + '&units=metric')
+    'b1ab53cd687ca486f76e739d8fc1a32b' + '&units=' + this.props.units)
     .then(response => response.json())
     .then(data => {this.props.setWeather(data)
     console.log('fetching', )});
     }
 
    componentDidUpdate(prevProps) {
-    if (this.props.longitude !== prevProps.longitude) { 
+    if (this.props.longitude !== prevProps.longitude || this.props.units !== prevProps.units) { 
     this.GetCurrentWeatherData();
     }
     }
