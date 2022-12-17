@@ -14,7 +14,7 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
 
   function DropDownSection(props) {
     return ( 
-    <div className="flex flex-col">
+    <div className="absolute -translate-x-32 translate-y-4 w-40 flex flex-col">
       <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-320" onClick={() => {setViewMode(viewMode === 'light'? 'dark' : 'light')}}>Enable {viewMode === 'light'? 'dark' : 'light'} mode</button>
       <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-320" onClick={() => {setUnits(units === 'metric'? 'imperial' : 'metric')}}>Switch units to {units === 'metric'? 'imperial': 'metric'}</button>
     </div>
