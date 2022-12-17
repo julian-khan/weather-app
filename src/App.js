@@ -43,6 +43,7 @@ function App() {
       threeHDDailySummaries={threeHDDailySummaries}
       setLocationName = {setLocationName} 
       units = {units}
+      setUnits={setUnits}
       viewMode={viewMode}
       setViewMode = {setViewMode}
       />

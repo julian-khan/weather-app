@@ -4,7 +4,7 @@ import SettingsIcon from './weather-icons/icons/SettingsIcon';
 import linkedinicon from './ContactMeHeader-icons/linkedinicon.png';
 import UISettingsDropdown from './UISettingsDropdown';
 
-export default function UIContactMeHeader({viewMode, setViewMode}) {
+export default function UIContactMeHeader({viewMode, setViewMode, units, setUnits}) {
  
 
   return (
@@ -16,7 +16,7 @@ export default function UIContactMeHeader({viewMode, setViewMode}) {
             <img src={linkedinicon} className='w-9' /> 
           </a>
         </li>
-        <UISettingsDropdown viewMode={viewMode} setViewMode={setViewMode}/>
+        <UISettingsDropdown viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits}/>
       </ul>
     </nav >   
   );
