@@ -25,9 +25,6 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
 
   function useOutsideClick(ref) {
     useEffect(() => {
-      /**
-       * Alert if clicked on outside of element
-       */
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target) && opened) {
           opened === true? setOpened(false): setOpened(true);
@@ -35,7 +32,7 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
       }
       document.addEventListener("mousedown", handleClickOutside);
       
-      return () => {
+      return () => { //Cleanup to remove the event listener
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }, [ref, opened]);
@@ -48,7 +45,6 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
     <li ref={wrapperRef} onClick={() => {setTimeout(()=> {setOpened(!opened)}, 150)}} className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-320"> 
     <GenerateSettingsIcon />
     {opened && <DropDownSection/>}
-
     </li>
     );
   };
