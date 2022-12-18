@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useRef, useEffect, useState } from "react";
 import SettingsIcon from "./weather-icons/icons/SettingsIcon";
 import use3H5DForecast from "./use3H5DForecast";
 
@@ -23,8 +23,29 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
     );
   }
 
+  function useOutsideClick(ref) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target) && opened) {
+          opened === true? setOpened(false): setOpened(true);
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref, opened]);
+  }
+
+    const wrapperRef = useRef(null);
+    useOutsideClick(wrapperRef);
+
   return (
-    <li onClick={() => {setTimeout(()=> {setOpened(!opened)}, 150)}} className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-320"> 
+    <li ref={wrapperRef} onClick={() => {setTimeout(()=> {setOpened(!opened)}, 150)}} className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-320"> 
     <GenerateSettingsIcon />
     {opened && <DropDownSection/>}
 
