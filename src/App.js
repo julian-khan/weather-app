@@ -29,13 +29,16 @@ function App() {
   const threeH5DData = use3H5DForecast(longitude, latitude, units);
   const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
 
+ //add this prop to parse3H5D: 
+ // currentTemp={processedCurrentWeatherData.temp} 
+ 
   return (
     <div className={viewMode}>
   
       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
       <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} units={units}/>
       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
-      <Parse3H5D currentTemp={processedCurrentWeatherData.temp} threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
+      <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
 
       <UIAppContainer 
       processedCurrentWeatherData={processedCurrentWeatherData} 
