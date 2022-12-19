@@ -28,7 +28,7 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
 
       if (compiledCurrentWeatherInfo.hasOwnProperty('sunset')) {
         const sunsetDate = new Date(compiledCurrentWeatherInfo.sunset * 1000 + timeAdjustmentms);
-        compiledCurrentWeatherInfo.sunsetFormatted = parsedSunsetTime = getTimeAtTargetLocation(sunsetDate);
+        compiledCurrentWeatherInfo.sunsetFormatted = getTimeAtTargetLocation(sunsetDate);
       }
 
       if (compiledCurrentWeatherInfo.hasOwnProperty('temp')) {
