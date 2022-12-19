@@ -35,7 +35,7 @@ function App() {
       <GetLongAndLat locationName={locationName} setLongitude={setLongitude} setLatitude={setLatitude}/>
       <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} units={units}/>
       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
-      <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
+      <Parse3H5D currentTemp={processedCurrentWeatherData.temp} threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
 
       <UIAppContainer 
       processedCurrentWeatherData={processedCurrentWeatherData} 

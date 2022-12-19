@@ -1488,20 +1488,14 @@ export function separate3H5DDataToDays(data) {
     }
 
     for (let i = 0; i <= data.list.length - 1; i++) { 
-        if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth
-            && i === data.list.length - 1
-            && dailyData.length > 1) {
-                dailyData.push(data.list[i]);
-                separated3HDailyData.push(dailyData);
-                break;
-            } else if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
+    if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
             dailyData.push(data.list[i]);
-            } else {
-                dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
-                dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
-                dailyData = [];
-                dailyData.push(data.list[i]);
-            }
+        } else {
+            dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
+            dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
+            dailyData = [];
+            dailyData.push(data.list[i]);
+        }
         }
         console.log(separated3HDailyData)
     return separated3HDailyData;

@@ -18,7 +18,12 @@ function getSummaries3H5D(separated3H5D) {
     dayListOutput.weather = mostCommonWeather;
 
     const dailyTempArray = dataHandling.getDailyTempArray(dayForData);
-    const MinAndMaxTemp = dataHandling.getMinAndMaxTemp(dailyTempArray);
+    let MinAndMaxTemp = dataHandling.getMinAndMaxTemp(dailyTempArray);
+    if (i===0 && props.currentTemp < MinAndMaxTemp[0]) {
+      MinAndMaxTemp[0] = props.currentTemp
+    } else if (i===0 && props.currentTemp > MinAndMaxTemp[1]) {
+      MinAndMaxTemp[1] = props.currentTemp
+    }
     dayListOutput.MinAndMaxTemp = MinAndMaxTemp;
 
     const date = new Date(dayForData[0].dt * 1000);
