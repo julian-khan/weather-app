@@ -11,8 +11,7 @@ class GetCurrentWeatherData extends Component {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + this.props.latitude + '&lon=' + this.props.longitude + '&appid=' + 
     'b1ab53cd687ca486f76e739d8fc1a32b' + '&units=' + this.props.units)
     .then(response => response.json())
-    .then(data => {this.props.setWeather(data)
-    console.log('fetching', )});
+    .then(data => {this.props.setWeather(data)});
     }
 
    componentDidUpdate(prevProps) {

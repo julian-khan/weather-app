@@ -1478,24 +1478,32 @@ export function separate3H5DDataToDays(data) {
     //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
     let separated3HDailyData = [];
     let dailyData = [];
-    let dateString = null;
+    let dayOfMonth = null;
+
+    const time_adjustment_seconds = data.city.timezone
+
+    function getLocalDayOfMonth (date_seconds, time_adjustment_seconds) {
+        const date = new Date(date_seconds * 1000 + time_adjustment_seconds * 1000);
+        return date.getUTCDate()
+    }
 
     for (let i = 0; i <= data.list.length - 1; i++) { 
-        if (data.list[i].dt_txt.includes(dateString) 
+        if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth
             && i === data.list.length - 1
             && dailyData.length > 1) {
                 dailyData.push(data.list[i]);
                 separated3HDailyData.push(dailyData);
                 break;
-            } else if (data.list[i].dt_txt.includes(dateString)) {
+            } else if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
             dailyData.push(data.list[i]);
             } else {
-                dateString = data.list[i].dt_txt.slice(0,10);
+                dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
                 dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
                 dailyData = [];
                 dailyData.push(data.list[i]);
             }
         }
+        console.log(separated3HDailyData)
     return separated3HDailyData;
     };
 
