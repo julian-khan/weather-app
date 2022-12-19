@@ -13,7 +13,7 @@ import UIAppContainer from './UIAppContainer';
 
 function App() {
   const [viewMode, setViewMode] = useState('light')
-  
+
   const [units, setUnits] = useState('metric'); // implement a button to toggle units (deg C and deg F)
 
   const [locationName, setLocationName] = useState('Perth');
