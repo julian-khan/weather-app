@@ -2,7 +2,6 @@ import './App.css';
 import {useState, useEffect} from 'react';
 
 //Data fetching and processing components
-import GetCurrentWeatherData from './GetCurrentWeatherData';
 import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
 import ParseCurrentWeatherData from './ParseCurrentWeatherData';
@@ -31,7 +30,19 @@ function App() {
     return 
     };
 
+    function useCurrentWeatherData() {
+      useEffect(() => { 
+        //Need to secure API key with backend when implement it
+        fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + 
+        'b1ab53cd687ca486f76e739d8fc1a32b' + '&units=' + units)
+        .then(response => response.json())
+        .then(data => {setCurrentWeatherData(data)});
+        }, [latitude, longitude, units])
+      }
+    
+          
     useLongAndLat()
+    useCurrentWeatherData()
 //combine longitude and latitude into one state variable - an array or standard object
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
@@ -46,7 +57,7 @@ function App() {
  
   return (
     <div className={viewMode}>
-      <GetCurrentWeatherData longitude={longitude} latitude={latitude} setWeather = {setCurrentWeatherData} units={units}/>
+
       <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
 

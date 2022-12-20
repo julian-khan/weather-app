@@ -4,7 +4,7 @@ import getTimeAtTargetLocation from './functions/getTimeAtTargetLocation';
 export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
   
   const getDateAtLocation = (dateObj) => { //rename to indicate that the function is setting the date
-    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'};
     return dateObj.toLocaleDateString("en-US", options); //change to "en-GB"
     }
     
@@ -15,7 +15,7 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
     compileCurrentWeatherInfo(currentWeatherData, compiledCurrentWeatherInfo);
     const timeAdjustmentms = currentWeatherData.timezone * 1000;
 
-    let dateOriginalForm = new Date(currentWeatherData.dt * 1000 + timeAdjustmentms);
+    let dateOriginalForm = new Date(Date.now() + timeAdjustmentms);
     compiledCurrentWeatherInfo['date'] = getDateAtLocation(dateOriginalForm);
 
     const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
