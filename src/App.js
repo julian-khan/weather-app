@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 //Data fetching and processing components
 import use3H5DForecast from './use3H5DForecast';
 import Parse3H5D from './Parse3H5D';
-import ParseCurrentWeatherData from './ParseCurrentWeatherData';
+import useCurrentWeatherData from './useCurrentWeatherData';
 
 //UI components
 import UIAppContainer from './UIAppContainer';
@@ -16,6 +16,15 @@ function App() {
 
   const [longitude, setLongitude] = useState(115.857048);
   const [latitude, setLatitude] = useState(-31.953512);
+
+  const [currentWeatherData, setCurrentWeatherData] = useState(null);
+
+  const [processedCurrentWeatherData, setProcessedCurrentWeatherData] = useState(null);
+
+
+  const threeH5DData = use3H5DForecast(longitude, latitude, units);
+  const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
+
 
   function useLongAndLat() {
     useEffect(() => {
@@ -30,7 +39,7 @@ function App() {
     return 
     };
 
-    function useCurrentWeatherData() {
+    function useRetrieveCurrentWeatherData() {
       useEffect(() => { 
         //Need to secure API key with backend when implement it
         fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + 
@@ -39,26 +48,23 @@ function App() {
         .then(data => {setCurrentWeatherData(data)});
         }, [latitude, longitude, units])
       }
-    
+
+     
           
     useLongAndLat()
-    useCurrentWeatherData()
+    useRetrieveCurrentWeatherData()
+    useCurrentWeatherData(currentWeatherData, setProcessedCurrentWeatherData)
 //combine longitude and latitude into one state variable - an array or standard object
 
-  const [currentWeatherData, setCurrentWeatherData] = useState(null);
-  const [processedCurrentWeatherData, setProcessedCurrentWeatherData] = useState(null);
 
-
-  const threeH5DData = use3H5DForecast(longitude, latitude, units);
-  const [threeHDDailySummaries, setThreeHDDailySummaries] = useState(null);
-
+  
  //add this prop to parse3H5D: 
  // currentTemp={processedCurrentWeatherData.temp} 
  
   return (
     <div className={viewMode}>
 
-      <ParseCurrentWeatherData currentWeatherData={currentWeatherData} setProcessedCurrentWeatherData={setProcessedCurrentWeatherData}/>
+      
       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
 
       <UIAppContainer 

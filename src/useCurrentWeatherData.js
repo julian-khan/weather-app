@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import getTimeAtTargetLocation from './functions/getTimeAtTargetLocation';
 
-export default function ParseCurrentWeatherData({currentWeatherData, setProcessedCurrentWeatherData}) {
+export default function useCurrentWeatherData(currentWeatherData, setProcessedCurrentWeatherData) {
   
   const getDateAtLocation = (dateObj) => { //rename to indicate that the function is setting the date
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'};
@@ -16,6 +16,7 @@ export default function ParseCurrentWeatherData({currentWeatherData, setProcesse
     const timeAdjustmentms = currentWeatherData.timezone * 1000;
 
     let dateOriginalForm = new Date(Date.now() + timeAdjustmentms);
+
     compiledCurrentWeatherInfo['date'] = getDateAtLocation(dateOriginalForm);
 
     const parsedTime = getTimeAtTargetLocation(dateOriginalForm);
