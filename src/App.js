@@ -49,22 +49,15 @@ function App() {
         }, [latitude, longitude, units])
       }
 
-     
-          
     useLongAndLat()
     useRetrieveCurrentWeatherData()
     useCurrentWeatherData(currentWeatherData, setProcessedCurrentWeatherData)
-//combine longitude and latitude into one state variable - an array or standard object
 
-
-  
  //add this prop to parse3H5D: 
  // currentTemp={processedCurrentWeatherData.temp} 
  
   return (
     <div className={viewMode}>
-
-      
       <Parse3H5D threeH5DData={threeH5DData} setThreeHDDailySummaries={setThreeHDDailySummaries} /> 
 
       <UIAppContainer 
