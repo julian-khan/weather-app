@@ -27,7 +27,6 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
     } else return <ErrorNotFound />
   };
 
-  console.log(daySummary)
   return (
     
     <div className='flex justify-between items-center rounded-md border-zinc-400 border-4 my-1 py-1 px-3'>

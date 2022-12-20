@@ -11,7 +11,8 @@ export default function UITodayWeatherInfoGrid ({processedCurrentWeatherData, un
     separatedDateArr.pop();
     return separatedDateArr;
   }
-  processedCurrentWeatherData? currentDateFormatted = formatDate("Saturday, November 12, 2022") : currentDateFormatted = null;
+
+  processedCurrentWeatherData? currentDateFormatted = formatDate(processedCurrentWeatherData.date) : currentDateFormatted = null;
   
   if (processedCurrentWeatherData && units) { 
   return (
