@@ -17,7 +17,7 @@ export default function UICurrentWeatherInfo({processedCurrentWeatherData, units
     <div className='text-slate-500 dark:text-slate-400 text-xl sm:text-2xl md:text-3xl'>{capitaliseString(processedCurrentWeatherData.weather[0].description)}, {processedCurrentWeatherData.temp}{formatUnits(units)}</div>
 
   <div className='text-slate-500 dark:text-slate-400 text-md sm:text-xl md:text-2xl'>
-    <span>Min: {todayMinAndMax[0]} {formatUnits(units)}</span> <span>Max: {todayMinAndMax[1]} {formatUnits(units)} </span>
+    <span className='p-1'>Min: {todayMinAndMax[0]} {formatUnits(units)}</span> <span className='p-1'>Max: {todayMinAndMax[1]} {formatUnits(units)} </span>
   </div>
   </div>
   );
