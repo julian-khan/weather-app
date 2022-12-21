@@ -20,9 +20,8 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
 
   if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
       return (
-        <div className='min-w-[600px] bg-white dark:bg-slate-800'>
+        <div className='pb-12 min-w-[600px] bg-white dark:bg-slate-800'>
           <UIContactMeHeader viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits}/> 
-
           {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
           <div className='flex items-center'>
             <UILocationSearch setLocationName={setLocationName}/>
