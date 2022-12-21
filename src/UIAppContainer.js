@@ -29,9 +29,9 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
             <UILocationSearch setLocationName={setLocationName}/>
           </div>
           <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
-          <UISectionHeading headingName={'Currently:'}/>
+          <UISectionHeading headingName={'Today'}/>
           <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
-          <UISectionHeading headingName={'Five-day forecast:'} />
+          <UISectionHeading headingName={'Five-day forecast'} />
           <UIFiveDayForecastGrid threeHDDailySummaries={threeHDDailySummaries} units={units}/>
         </div>
       );
