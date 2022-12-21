@@ -4,9 +4,8 @@ import SettingsIcon from "./weather-icons/icons/SettingsIcon";
 export default function UISettingsDropdown({viewMode, setViewMode, units, setUnits}) {
   const [opened, setOpened] = useState(false);
 
-  function DropDownSection(props) {
-    const itemStyling = "border-solid border-zinc-400 border-2 rounded-md transition ease-in-out delay-100 hover:bg-sky-500 hover:ring-sky-500 duration-320 dark:text-slate-400 text-xl"
-
+  function DropDownSection() {
+    const itemStyling = "border-solid border-zinc-400 border-2 rounded-md transition ease-in-out delay-100 hover:bg-sky-500 hover:ring-sky-500 dark:hover:ring-sky-800 duration-320 text-md dark:text-white "
     return ( 
     <div className="absolute -translate-x-32 translate-y-4 w-40 flex flex-col">
       <button className={itemStyling} onClick={() => {setViewMode(viewMode === 'light'? 'dark' : 'light')}}>Enable {viewMode === 'light'? 'dark' : 'light'} mode</button>

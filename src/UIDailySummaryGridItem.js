@@ -28,7 +28,7 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
   };
 
   return (
-    <div className='flex justify-between items-center rounded-md py-1 px-3'>
+    <div className='flex justify-between items-center rounded-md py-1 px-3 dark:text-white'>
       <div className='w-36'>
         {daySummary.dayOfWeek}
       </div>
