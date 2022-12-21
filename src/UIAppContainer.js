@@ -22,14 +22,12 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
       return (
         <div className='min-w-[600px] bg-white dark:bg-slate-800'>
           <UIContactMeHeader viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits}/> 
-          <div className='flex justify-end'> 
-          </div>
+
           {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
           <div className='flex items-center'>
             <UILocationSearch setLocationName={setLocationName}/>
           </div>
           <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
-          <UISectionHeading headingName={'Today'}/>
           <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
           <UISectionHeading headingName={'Five-day forecast'} />
           <UIFiveDayForecastGrid threeHDDailySummaries={threeHDDailySummaries} units={units}/>
