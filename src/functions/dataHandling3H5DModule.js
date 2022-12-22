@@ -1,9 +1,8 @@
 export function separate3H5DDataToDays(data) { 
-    //takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's worth of data
+    /* Takes raw 3H5D data obj as a parameter and returns an array of 5 arrays, one for each day's data */
     let separated3HDailyData = [];
     let dailyData = [];
     let dayOfMonth = null;
-
     const time_adjustment_seconds = data.city.timezone
 
     function getLocalDayOfMonth (date_seconds, time_adjustment_seconds) {
@@ -12,24 +11,22 @@ export function separate3H5DDataToDays(data) {
     }
 
     for (let i = 0; i <= data.list.length - 1; i++) { 
-    if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
+        if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
             dailyData.push(data.list[i]);
-        } else {
-            dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
-            dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
-            dailyData = [];
-            dailyData.push(data.list[i]);
+            } else {
+                dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
+                dailyData.length > 0 ? separated3HDailyData.push(dailyData) : dailyData = null;
+                dailyData = [];
+                dailyData.push(data.list[i]);
         }
-        }
+    }
     return separated3HDailyData;
-    };
+};
 
 export function getDailyWeatherDescriptions(data) {
     var weatherDescCount = {};
-
     for (let i = 0; i <= data.length - 1; i++) {
         let threeHourWeatherDesc = data[i].weather[0].main;
-
         if (threeHourWeatherDesc in weatherDescCount) {
             weatherDescCount[threeHourWeatherDesc]++;
         } else {
@@ -44,13 +41,12 @@ export function getMostCommonWeatherDescription(Obj) {
 };
 
 export function getDailyTempArray(data) {
-    //Takes the 3H5D weather object as a parameter, output an array of all of 3-hourly temperatures that includes the min and max temperatures.
+    /* Takes the 3H5D weather object as a parameter and outputs an array of all of 3-hourly temperatures
+    that includes the min and max temperatures. */
     let dailyTemperatures = [];
-
     for (let i = 0; i <= data.length - 1; i++) {
         dailyTemperatures.push(data[i].main.temp);
         }
-    
     return dailyTemperatures;
 };
 
@@ -64,5 +60,5 @@ export function calculateAvVisibility(dayForData) {
       summedVisibility += dayForData[i].visibility;
     }
     return summedVisibility/dayForData.length;
-  }
+}
 
