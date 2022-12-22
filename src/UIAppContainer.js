@@ -1,4 +1,4 @@
-import UITopSection from './UITopSection';
+import UITitleSection from './UITitleSection';
 import UIContactMeHeader from './UIContactMeHeader';
 import UILocationSearch from './UILocationSearch';
 import UICurrentWeatherInfo from './UICurrentWeatherInfo';
@@ -15,7 +15,7 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
       return (
         <div className='pb-12 min-w-[600px] bg-white dark:bg-slate-800'>
           <UIContactMeHeader viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits} /> 
-          <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />
+          <UITitleSection />
           <div className='flex items-center'>
             <UILocationSearch setLocationName={setLocationName}/>
           </div>

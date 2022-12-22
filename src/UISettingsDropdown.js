@@ -33,9 +33,10 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
   useOutsideClick(wrapperRef);
 
   return (
-    <li ref={wrapperRef} onClick={() => {setTimeout(()=> {setOpened(!opened)}, 150)}} className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-320"> 
-    <SettingsIcon />
-    {opened && <DropDownSection/>}
+    <li ref={wrapperRef} onClick={() => {setTimeout(()=> {setOpened(!opened)}, 150)}}
+    className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-320"> 
+      <SettingsIcon />
+      {opened && <DropDownSection/>}
     </li>
     );
   };

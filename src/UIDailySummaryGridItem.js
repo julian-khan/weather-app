@@ -41,5 +41,5 @@ export default function UIDailySummaryGridItem({daySummary, units}) {
       Max: {daySummary.MinAndMaxTemp[1]} {formatUnits(units)}
       </div>
     </div>
-  );
-    };
+    );
+  };
