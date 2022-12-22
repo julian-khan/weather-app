@@ -1,6 +1,4 @@
-
-time_adjustment_seconds = 28800
-const date = new Date(1671451200 * 1000 + time_adjustment_seconds * 1000); // time in ms
-day_of_month = date.getUTCDate()
-
-console.log(day_of_month, date.getUTCHours(), date.getUTCMinutes())
+/* This sandbox file was used to test code before adding it to my application.
+I have not yet deleted it because I intend to add more features to this app in the future,
+which may require testing before implementation.
+*/
