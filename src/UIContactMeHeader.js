@@ -17,6 +17,6 @@ export default function UIContactMeHeader({viewMode, setViewMode, units, setUnit
         <UISettingsDropdown viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits}/>
       </ul>
     </nav >   
-  );
+    );
 
   };

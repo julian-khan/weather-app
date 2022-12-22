@@ -8,11 +8,9 @@ import UIFiveDayForecastGrid from './UIFiveDayForecastGrid';
 
 export default function UIAppContainer({setLocationName, processedCurrentWeatherData, threeHDDailySummaries, units, setUnits, viewMode, setViewMode}) {
   let todayMinAndMax = null;
-
   if (threeHDDailySummaries) { 
     todayMinAndMax = threeHDDailySummaries[0].MinAndMaxTemp
-}
-
+  }
   if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
       return (
         <div className='pb-12 min-w-[600px] bg-white dark:bg-slate-800'>

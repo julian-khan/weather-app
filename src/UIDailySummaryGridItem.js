@@ -8,7 +8,6 @@ import {ErrorNotFound} from './weather-icons/icons/ErrorNotFound';
 import formatUnits from "./functions/formatUnits";
 
 export default function UIDailySummaryGridItem({daySummary, units}) {
-
   const getWeatherIcon = (daySummary) => {
     const weatherDesc = daySummary.weather;
     const visibility = daySummary.averageVisibility;
