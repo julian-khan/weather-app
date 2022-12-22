@@ -35,7 +35,7 @@ export default function useParse3H5D(processedCurrentWeatherData, threeH5DData, 
 
       summarisedDay3H.push(dayListOutput);
     }
-  return summarisedDay3H;
+    return summarisedDay3H;
   }
 
   useEffect(() => {

@@ -24,8 +24,7 @@ function App() {
 
   function useLongAndLat() {
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=` + locationName + `&limit=1&appid=` + 
-        `b1ab53cd687ca486f76e739d8fc1a32b`)
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${locationName}&limit=1&appid=b1ab53cd687ca486f76e739d8fc1a32b`)
         .then(response => response.json())
         .then(data => {
             setLongitude(data[0].lon);
@@ -37,9 +36,7 @@ function App() {
 
   function useRetrieveCurrentWeatherData() {
     useEffect(() => { 
-      //Need to secure API key with backend when implement it
-      fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + 
-      'b1ab53cd687ca486f76e739d8fc1a32b' + '&units=' + units)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=b1ab53cd687ca486f76e739d8fc1a32b&units=${units}`)
       .then(response => response.json())
       .then(data => {setCurrentWeatherData(data)});
       }, [latitude, longitude, units])
