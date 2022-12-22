@@ -1,8 +1,7 @@
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 import * as dataHandling from './functions/dataHandling3H5DModule'
 
 export default function useParse3H5D(processedCurrentWeatherData, threeH5DData, setThreeHDDailySummaries) {
-//will take the original full 3h5d json object as a prop
 
   function getSummaries3H5D(separated3H5D) {
     const currentTemp = processedCurrentWeatherData.temp
@@ -35,7 +34,7 @@ export default function useParse3H5D(processedCurrentWeatherData, threeH5DData, 
       dayListOutput.averageVisibility = averageVisibility;
 
       summarisedDay3H.push(dayListOutput);
-  }
+    }
   return summarisedDay3H;
   }
 
@@ -44,6 +43,5 @@ export default function useParse3H5D(processedCurrentWeatherData, threeH5DData, 
       const separated3H5D = dataHandling.separate3H5DDataToDays(threeH5DData);
       const summaryOutput = getSummaries3H5D(separated3H5D);
       setThreeHDDailySummaries(summaryOutput);
-    }
-  }, [processedCurrentWeatherData, threeH5DData]);
+    }}, [processedCurrentWeatherData, threeH5DData]);
 }
