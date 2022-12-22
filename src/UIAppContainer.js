@@ -26,7 +26,7 @@ export default function UIAppContainer({
     units
   ) {
     return (
-      <div className="min-w-[600px] bg-white pb-12 dark:bg-slate-800">
+      <div className="min-w-[600px] bg-white pb-12 h-screen dark:bg-slate-800">
         <UIContactMeHeader
           viewMode={viewMode}
           setViewMode={setViewMode}
