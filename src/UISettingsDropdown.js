@@ -9,7 +9,7 @@ export default function UISettingsDropdown({viewMode, setViewMode, units, setUni
     return ( 
     <div className="absolute -translate-x-32 translate-y-4 w-40 flex flex-col">
       <button className={itemStyling} onClick={() => {setViewMode(viewMode === 'light'? 'dark' : 'light')}}>Enable {viewMode === 'light'? 'dark' : 'light'} mode</button>
-      <button className={itemStyling} onClick={() => {setUnits(units === 'metric'? 'imperial' : 'metric')}}>Switch units to {units === 'metric'? 'imperial': 'metric'}</button>
+      <button className={itemStyling} onClick={() => {setUnits(units === 'metric'? 'imperial' : 'metric')}}>Switch to degrees {units === 'metric'? 'Fahrenheit': 'Celsius'}</button>
     </div>
     );
   }
