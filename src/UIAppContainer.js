@@ -1,7 +1,6 @@
 import UITopSection from './UITopSection';
 import UIContactMeHeader from './UIContactMeHeader';
 import UILocationSearch from './UILocationSearch';
-import SettingsIcon from './weather-icons/icons/SettingsIcon';
 import UICurrentWeatherInfo from './UICurrentWeatherInfo';
 import UISectionHeading from './UISectionHeading';
 import UITodayWeatherInfoGrid from './UITodayWeatherInfoGrid'
@@ -14,22 +13,18 @@ export default function UIAppContainer({setLocationName, processedCurrentWeather
     todayMinAndMax = threeHDDailySummaries[0].MinAndMaxTemp
 }
 
-  const createUITopSection = () => {
-    return <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />;
-  }
-
   if(setLocationName && processedCurrentWeatherData && threeHDDailySummaries && units) {
       return (
         <div className='pb-12 min-w-[600px] bg-white dark:bg-slate-800'>
-          <UIContactMeHeader viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits}/> 
-          {processedCurrentWeatherData && todayMinAndMax? createUITopSection() : null}
+          <UIContactMeHeader viewMode={viewMode} setViewMode={setViewMode} units={units} setUnits={setUnits} /> 
+          <UITopSection processedCurrentWeatherData={processedCurrentWeatherData} todayMinAndMax={todayMinAndMax} />
           <div className='flex items-center'>
             <UILocationSearch setLocationName={setLocationName}/>
           </div>
-          <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax}/>
-          <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units}/>
+          <UICurrentWeatherInfo processedCurrentWeatherData={processedCurrentWeatherData} units={units} todayMinAndMax={todayMinAndMax} />
+          <UITodayWeatherInfoGrid processedCurrentWeatherData={processedCurrentWeatherData} units={units} />
           <UISectionHeading headingName={'Five-day forecast'} />
-          <UIFiveDayForecastGrid threeHDDailySummaries={threeHDDailySummaries} units={units}/>
+          <UIFiveDayForecastGrid threeHDDailySummaries={threeHDDailySummaries} units={units} />
         </div>
       );
   }
