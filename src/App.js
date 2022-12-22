@@ -26,7 +26,7 @@ function App() {
   function useLongAndLat() {
     useEffect(() => {
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${locationName}&limit=1&appid=b1ab53cd687ca486f76e739d8fc1a32b`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${locationName}&limit=1&appid=b1ab53cd687ca486f76e739d8fc1a32b`
       )
         .then((response) => response.json())
         .then((data) => {
