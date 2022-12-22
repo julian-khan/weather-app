@@ -6,7 +6,6 @@ export default function LocationForm({setLocationName}) {
     function handleChange(event) {
         setFormValue(event.target.value);
     };
-
     function handleSubmit(event) {
         event.preventDefault();
         setLocationName(formValue);
@@ -29,5 +28,5 @@ export default function LocationForm({setLocationName}) {
                 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Search</button>
             </div>
         </form>
-        );
-    };
+    );
+};
