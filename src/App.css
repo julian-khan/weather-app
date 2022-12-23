@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This file is largely unused as Tailwind was used
+to style the app, not standard CSS. */
+
+.App {
+  text-align: center;
+}
+
