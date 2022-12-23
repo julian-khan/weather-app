@@ -6,6 +6,7 @@ import ManyClouds from "./weather-icons/icons/ManyClouds";
 import ShowersDay from "./weather-icons/icons/ShowersDay";
 import ShowersNight from "./weather-icons/icons/ShowersNight";
 import Snow from "./weather-icons/icons/Snow";
+import Fog from "./weather-icons/icons/Fog";
 
 
 export default function GetWeatherIcon({ processedCurrentWeatherData }) {
@@ -21,7 +22,7 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
   const isDay = (currentDt, sunsetDt) => {
     //Takes two Unix timestamps as arguments
     return currentDt < sunsetDt ? true : false;
-  };
+  }
 
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === "Clear") {
     return <ClearDay />;
@@ -62,5 +63,10 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
     weatherDesc === "Drizzle"
   ) {
     return <ShowersNight />;
-  } else return <div />;
+  } else if (
+    weatherDesc === "Fog" 
+  ) {
+    return <Fog />;
+  }
+  else return <div />;
 }

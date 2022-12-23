@@ -1,3 +1,8 @@
 The weather icons used in this project are sourced from the following repo, under a Creative Commons license:
 https://github.com/fabianalexisinostroza/Antu-icons
 
+Fog icon attribution:
+https://freeicons.io/index.php/profile/730
+
+
+
