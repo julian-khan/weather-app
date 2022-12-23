@@ -59,7 +59,7 @@ function App() {
   );
 
   return (
-    <div className={viewMode}>
+    <div className={viewMode + ' h-fit'}>
       <UIAppContainer
         processedCurrentWeatherData={processedCurrentWeatherData}
         threeHDDailySummaries={threeHDDailySummaries}

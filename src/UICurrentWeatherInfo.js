@@ -26,11 +26,11 @@ export default function UICurrentWeatherInfo({
           {formatUnits(units)}
         </div>
         <div className="text-md text-slate-500 dark:text-slate-400 sm:text-xl md:text-2xl">
-          <span className="p-1">
-            Min: {todayMinAndMax[0]} {formatUnits(units)}
+          <span className="text-red-500 dark:text-red-300 p-1">
+            Min: {todayMinAndMax[0]}{formatUnits(units)}*
           </span>
-          <span className="p-1">
-            Max: {todayMinAndMax[1]} {formatUnits(units)}{" "}
+          <span className="text-red-500 dark:text-red-300 p-1">
+            Max: {todayMinAndMax[1]}{formatUnits(units)}*
           </span>
         </div>
       </div>
