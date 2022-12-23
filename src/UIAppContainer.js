@@ -46,7 +46,7 @@ export default function UIAppContainer({
           processedCurrentWeatherData={processedCurrentWeatherData}
           units={units}
         />
-        <UISectionHeading headingName={"Five-day forecast"} />
+        <UISectionHeading headingName={"Forecast"} />
         <UIFiveDayForecastGrid
           threeHDDailySummaries={threeHDDailySummaries}
           units={units}

@@ -11,10 +11,10 @@ export function separate3H5DDataToDays(data) {
   }
 
   for (let i = 0; i <= data.list.length - 1; i++) {
-    if (
-      getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) ===
-      dayOfMonth
-    ) {
+    if (i === 39) {
+      dailyData.push(data.list[i])
+      separated3HDailyData.push(dailyData)
+    } else if (getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds) === dayOfMonth) {
       dailyData.push(data.list[i]);
     } else {
       dayOfMonth = getLocalDayOfMonth(data.list[i].dt, time_adjustment_seconds);
