@@ -15,7 +15,7 @@ export default function UIContactMeHeader({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="text-sm tracking-tight text-black bg-white py-2 px-2 rounded-lg border border-gray-300">
+        <div className="rounded-lg border border-gray-300 bg-white py-2 px-2 text-sm tracking-tight text-black">
           View project README
         </div>
       </a>

@@ -8,7 +8,6 @@ import ShowersNight from "./weather-icons/icons/ShowersNight";
 import Snow from "./weather-icons/icons/Snow";
 import Fog from "./weather-icons/icons/Fog";
 
-
 export default function GetWeatherIcon({ processedCurrentWeatherData }) {
   //make this function generic so that it can be reused for 5-day daily components
   //Returns an SVG image as a React Component
@@ -22,7 +21,7 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
   const isDay = (currentDt, sunsetDt) => {
     //Takes two Unix timestamps as arguments
     return currentDt < sunsetDt ? true : false;
-  }
+  };
 
   if (isDay(currentDateTime, todaySunsetDateTime) && weatherDesc === "Clear") {
     return <ClearDay />;
@@ -63,14 +62,9 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
     weatherDesc === "Drizzle"
   ) {
     return <ShowersNight />;
-  } else if (
-    weatherDesc === "Fog" 
-  ) {
+  } else if (weatherDesc === "Fog") {
     return <Fog />;
-  } else if (
-    weatherDesc === "Mist" 
-  ) {
+  } else if (weatherDesc === "Mist") {
     return <ManyClouds />;
-  }
-  else return <div />;
+  } else return <div />;
 }

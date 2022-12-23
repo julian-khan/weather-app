@@ -26,7 +26,7 @@ export default function UIAppContainer({
     units
   ) {
     return (
-      <div className="h-fit min-w-[600px] bg-white pb-12 dark:bg-slate-800 pb-12">
+      <div className="h-fit min-w-[600px] bg-white pb-12 pb-12 dark:bg-slate-800">
         <UIContactMeHeader
           viewMode={viewMode}
           setViewMode={setViewMode}
@@ -51,9 +51,11 @@ export default function UIAppContainer({
           threeHDDailySummaries={threeHDDailySummaries}
           units={units}
         />
-        <div className="text-md text-red-500 dark:text-red-300 mx-auto mt-8 w-2/4 min-w-[450px] max-w-[800px] rounded-md px-3">
-          *Please note that the displayed minimum and maximum temperatures are usually inaccurate due to a limitation
-          of the data received from the API. Please refer to the project's README file on GitHub for an explanation.
+        <div className="text-md mx-auto mt-8 w-2/4 min-w-[450px] max-w-[800px] rounded-md px-3 text-red-500 dark:text-red-300">
+          *Please note that the displayed minimum and maximum temperatures are
+          usually inaccurate due to a limitation of the data received from the
+          API. Please refer to the project's README file on GitHub for an
+          explanation.
         </div>
       </div>
     );

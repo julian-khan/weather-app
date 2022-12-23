@@ -1,9 +1,9 @@
 import React from "react";
 
 function Fog() {
-    /* Fog icon attribution:
-    https://freeicons.io/index.php/profile/730 */   
-    return (
+  /* Fog icon attribution:
+    https://freeicons.io/index.php/profile/730 */
+  return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
