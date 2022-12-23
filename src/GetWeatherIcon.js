@@ -6,7 +6,7 @@ import ManyClouds from "./weather-icons/icons/ManyClouds";
 import ShowersDay from "./weather-icons/icons/ShowersDay";
 import ShowersNight from "./weather-icons/icons/ShowersNight";
 import Snow from "./weather-icons/icons/Snow";
-import { ErrorNotFound } from "./weather-icons/icons/ErrorNotFound";
+
 
 export default function GetWeatherIcon({ processedCurrentWeatherData }) {
   //make this function generic so that it can be reused for 5-day daily components
@@ -62,5 +62,5 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
     weatherDesc === "Drizzle"
   ) {
     return <ShowersNight />;
-  } else return <ErrorNotFound />;
+  } else return <div />;
 }
