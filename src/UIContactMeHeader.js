@@ -12,9 +12,11 @@ export default function UIContactMeHeader({
       <a
         className="duration-320 transition delay-150 ease-in-out hover:-translate-y-0.5 hover:scale-105"
         href="https://github.com/julian-khan/weather-app#readme"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <div className="text-sm tracking-tight text-gray-900 ">
-          Please view the README file on GitHub
+        <div className="text-sm tracking-tight text-black bg-white py-2 px-2 rounded-lg border border-gray-300">
+          View project README
         </div>
       </a>
       <ul className="flex items-center">
