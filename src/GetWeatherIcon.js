@@ -67,6 +67,10 @@ export default function GetWeatherIcon({ processedCurrentWeatherData }) {
     weatherDesc === "Fog" 
   ) {
     return <Fog />;
+  } else if (
+    weatherDesc === "Mist" 
+  ) {
+    return <ManyClouds />;
   }
   else return <div />;
 }
