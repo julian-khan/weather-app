@@ -1,13 +1,20 @@
 import { useState } from "react";
 
 export default function LocationForm({ setLocationName }) {
+  const validFormStyling =
+    "border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:border-blue-500";
+  const invalidFormStyling =
+    "border-red-600 dark:border-red-300 focus:ring-red-500 dark:focus:border-red-300";
+  const defaultStyling =
+    " text-md block w-full rounded-lg border  bg-gray-50 p-4 pl-10 italic text-black focus:border-blue-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500";
+
   const [formValue, setFormValue] = useState("");
+  const [borderColour, setBorderColour] = useState(validFormStyling);
   const [errors, setErrors] = useState({});
 
   function handleChange(event) {
     setFormValue(event.target.value);
   }
-
 
   function isValidForm(event) {
     let errors = {};
@@ -16,26 +23,31 @@ export default function LocationForm({ setLocationName }) {
     if (!formValue) {
       formIsValid = false;
       errors["form-value"] = "Cannot be empty";
-    } else if (typeof formValue !== "undefined" && !formValue.match(/^[a-zA-Z ]+$/)) {
+    } else if (
+      typeof formValue !== "undefined" &&
+      !formValue.match(/^[a-zA-Z ]+$/)
+    ) {
       formIsValid = false;
       errors["form-value"] = "Only letters are permitted";
-      } else if (formValue.length < 3) {
-        formIsValid = false;
-        errors["form-value"] = "Entered city name is too short";
-      }
-    setErrors(errors)
-    return formIsValid
+    } else if (formValue.length < 3) {
+      formIsValid = false;
+      errors["form-value"] = "Entered city name is too short";
+    }
+    setErrors(errors);
+    return formIsValid;
   }
 
   function formSubmit(event) {
     event.preventDefault();
     if (isValidForm(event)) {
       setLocationName(formValue);
-      console.log('test, form is valid')
+      if (borderColour != "border-gray-300") {
+        setBorderColour(validFormStyling);
+      }
     } else {
-      alert('Form has errors')
+      alert("Form has errors");
+      setBorderColour(invalidFormStyling);
     }
-
   }
 
   return (
@@ -55,10 +67,7 @@ export default function LocationForm({ setLocationName }) {
           id="city-search"
           value={formValue}
           onChange={handleChange}
-          className="text-md block
-                w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 italic text-black focus:border-blue-500
-                focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400
-                dark:focus:border-blue-500 dark:focus:ring-blue-500"
+          className={borderColour + defaultStyling}
           placeholder="Search by entering the name of a city..."
           required=""
         />
