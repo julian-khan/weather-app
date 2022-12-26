@@ -2,18 +2,45 @@ import { useState } from "react";
 
 export default function LocationForm({ setLocationName }) {
   const [formValue, setFormValue] = useState("");
+  const [errors, setErrors] = useState({});
 
   function handleChange(event) {
     setFormValue(event.target.value);
   }
-  function handleSubmit(event) {
+
+
+  function isValidForm(event) {
+    let errors = {};
+    let formIsValid = true;
+
+    if (!formValue) {
+      formIsValid = false;
+      errors["form-value"] = "Cannot be empty";
+    } else if (typeof formValue !== "undefined" && !formValue.match(/^[a-zA-Z ]+$/)) {
+      formIsValid = false;
+      errors["form-value"] = "Only letters are permitted";
+      } else if (formValue.length < 3) {
+        formIsValid = false;
+        errors["form-value"] = "Entered city name is too short";
+      }
+    setErrors(errors)
+    return formIsValid
+  }
+
+  function formSubmit(event) {
     event.preventDefault();
-    setLocationName(formValue);
+    if (isValidForm(event)) {
+      setLocationName(formValue);
+      console.log('test, form is valid')
+    } else {
+      alert('Form has errors')
+    }
+
   }
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={formSubmit}
       className="mx-auto mt-6 mb-6 w-2/4 min-w-[450px] max-w-[800px]"
     >
       <label
