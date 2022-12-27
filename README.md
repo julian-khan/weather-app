@@ -3,9 +3,9 @@
 Hello and thank you for viewing my weather app project. I created this app by independently learning about the technologies implemented and undertaking a Master of Information Technology degree online at the University of Southern Queensland.
 
 
-#Link to my youtube video that demonstrates the app in action
+# YouTube video of my app
 Below is a quick YouTube video in which I demonstrate the weather app's functionality.
-- ADD YOUTUBE LINK
+(Link to be uploaded soon)
 
 #Why I built this app
 I built this weather app to improve my competencies with the technologies commonly used in front-end web development. Another reason I created this app is to demonstrate my abilities, proactiveness and high level of motivation as a junior software developer.
