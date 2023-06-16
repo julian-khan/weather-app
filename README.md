@@ -1,26 +1,18 @@
 # About my weather app
 
-Hello and thank you for viewing my weather app project. I created this app by independently learning about the technologies implemented and undertaking a Master of Information Technology degree online at the University of Southern Queensland.
-
-
-# YouTube video of my app
-Below is a quick YouTube video in which I demonstrate the weather app's functionality.
-(Link to be uploaded soon)
+Hello and thank you for viewing my first project, which is a weather app. I created this app by completing The Odin Project, which is an online course for learning full-stack web development. I independently learned about the utilised technologies before commencing my Master of Information Technology degree at the University of Southern Queensland.
 
 #Why I built this app
-I built this weather app to improve my competencies with the technologies commonly used in front-end web development. Another reason I created this app is to demonstrate my abilities, proactiveness and high level of motivation as a junior software developer.
-
-I intend to continue to work on this app to improve on and demonstrate my technical skills. For example, I will learn more about ASP.NET Core and C# by reading their documentation. I will then implement a backend with these technologies for my web app, so that users can create an account, log in and out, save and view their favourite cities and change settings that persist between sessions.
+I built this weather app to improve my competencies with the technologies commonly used in front-end web development. Another reason I created this app is to demonstrate my abilities, proactiveness and high level of motivation as a junior software developer. Please note that as this was my first major software development project, it is not as well designed or implemented as my more recent projects that are also on GitHub.
 
 # Technologies used
-
 This app was created using various technologies, including:
 - Visual Studio Code
 - Git for version control with the Feature Branch Workflow
 - npm and a configured package.json file
 - React (Create React App) and Javascript
 - Tools such as Webpack and Babel for creating optimised production builds (managed by Create React App)
-- Tailwind CSS (PostCSS framework)
+- Tailwind CSS (a PostCSS plugin)
 -HTML5
 - ESLint and Prettier for linting and formatting my code
 - Github for hosting my code and Github pages for hosting the app's deployed builds.
@@ -39,6 +31,7 @@ I developed several skills important to junior software developers by completing
 - I improved my understanding of synchronous versus asynchronous control flows and javascript promises.
 
 # What I would add to my app
+- Client-side input validation to check that the user has input a valid city
 - A backend implemented with ASP.NET Core and C# to hide the API key used to make fetch calls to the OpenWeather APIs.
 - The backend would also enable me to implement an autocomplete feature by storing city names in a SQL or other type of database.
 - Thorough unit testing for every React component and most of the javascript functions to ensure that the app operates reliably.
@@ -55,7 +48,7 @@ Thank you for taking the time to read this description.
 
 Please contact me if you have any feedback on my portfolio or wish to discuss an employment opportunity.
 
-Sincerely,
+Yours faithfully
 
 Julian Khan
 
