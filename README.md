@@ -42,7 +42,7 @@ Designing and creating this app has greatly improved my competency in front-end 
 
 Creating this app also led me to realise that there is a lot that I do not yet know about both front-end and back-end development. I am therefore keen to continue to learn about new technologies and to improve my skills as a developer. I will achieve these aims through continued proactive independent learning, completing more projects, continuing with my online masters degree and by gaining employment as a junior developer.
 
-Once employed, I will proactively learn about my organisation's codebase and technology stack. I will also endeavour to quickly improve my competencies in the skills needed in my role and seek feedback and learn from experienced colleagues. I am extremely passionate about software developemnt and wish to apply what I have learned to bring value to your organisation.
+Once employed, I will proactively learn about my organisation's codebase and technology stack. I will also endeavour to quickly improve my competencies in the skills needed in my role and seek feedback and learn from experienced colleagues. I am extremely passionate about software developement and wish to apply what I have learned to bring value to your organisation.
 
 Thank you for taking the time to read this description. 
 
